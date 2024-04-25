@@ -105,6 +105,8 @@ class="math inline">\(\le {10}^{18}\)</span>。</p>
 <p>如：数组为 <code>1 1 4 5 1 4</code></p>
 <p>则其出现次数为（从 <span class="math inline">\(0\)</span>
 开始）<code>0 3 0 0 2 1</code>。</p>
+<h3 id="线段树合并">3. 线段树合并</h3>
+<p>前置知识：权值线段树。</p>
 ]]></content>
       <categories>
         <category>线段树</category>
