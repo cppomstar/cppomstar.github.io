@@ -18,10 +18,10 @@
   --btn-default-hover-bg: #222;
   --btn-default-hover-color: #fff;
   --btn-default-hover-border-color: #222;
-  --highlight-background: #f3f3f3;
-  --highlight-foreground: #444;
-  --highlight-gutter-background: #e1e1e1;
-  --highlight-gutter-foreground: #555;
+  --highlight-background: #fff;
+  --highlight-foreground: #000;
+  --highlight-gutter-background: #e5e5e5;
+  --highlight-gutter-foreground: #191919;
   color-scheme: light;
 }
 html {
@@ -373,109 +373,55 @@ pre code.hljs {
 code.hljs {
   padding: 3px 5px
 }
-/*!
-  Theme: Default
-  Description: Original highlight.js style
-  Author: (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
-  Maintainer: @highlightjs/core-team
-  Website: https://highlightjs.org/
-  License: see project LICENSE
-  Touched: 2021
-*/
 /*
-This is left on purpose making default.css the single file that can be lifted
-as-is from the repository directly without the need for a build step
 
-Typically this "required" baseline CSS is added by `makestuff.js` during build.
+Visual Studio-like style based on original C# coloring by Jason Diamond <jason@diamond.name>
+
 */
-pre code.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 1em
-}
-code.hljs {
-  padding: 3px 5px
-}
-/* end baseline CSS */
 .hljs {
-  background: #F3F3F3;
-  color: #444
+  background: white;
+  color: black
 }
-/* Base color: saturation 0; */
-.hljs-subst {
-  /* default */
-  
-}
-/* purposely ignored */
-.hljs-formula,
-.hljs-attr,
-.hljs-property,
-.hljs-params {
-  
-}
-.hljs-comment {
-  color: #697070
-}
-.hljs-tag,
-.hljs-punctuation {
-  color: #444a
-}
-.hljs-tag .hljs-name,
-.hljs-tag .hljs-attr {
-  color: #444
+.hljs-comment,
+.hljs-quote,
+.hljs-variable {
+  color: #008000
 }
 .hljs-keyword,
-.hljs-attribute,
 .hljs-selector-tag,
-.hljs-meta .hljs-keyword,
-.hljs-doctag,
-.hljs-name {
-  font-weight: bold
-}
-/* User color: hue: 0 */
-.hljs-type,
-.hljs-string,
-.hljs-number,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-quote,
-.hljs-template-tag,
-.hljs-deletion {
-  color: #880000
-}
-.hljs-title,
-.hljs-section {
-  color: #880000;
-  font-weight: bold
-}
-.hljs-regexp,
-.hljs-symbol,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-link,
-.hljs-selector-attr,
-.hljs-operator,
-.hljs-selector-pseudo {
-  color: #ab5656
-}
-/* Language color: hue: 90; */
-.hljs-literal {
-  color: #695
-}
 .hljs-built_in,
-.hljs-bullet,
-.hljs-code,
+.hljs-name,
+.hljs-tag {
+  color: #00f
+}
+.hljs-string,
+.hljs-title,
+.hljs-section,
+.hljs-attribute,
+.hljs-literal,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
 .hljs-addition {
-  color: #397300
+  color: #a31515
 }
-/* Meta color: hue: 200 */
+.hljs-deletion,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
 .hljs-meta {
-  color: #1f7199
+  color: #2b91af
 }
-.hljs-meta .hljs-string {
-  color: #38a
+.hljs-doctag {
+  color: #808080
 }
-/* Misc effects */
+.hljs-attr {
+  color: #f00
+}
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link {
+  color: #00b0e8
+}
 .hljs-emphasis {
   font-style: italic
 }
@@ -497,56 +443,13 @@ code.hljs {
   padding: 2px 6px;
   position: absolute;
   transition: opacity 0.2s ease-in-out;
-  color: var(--highlight-foreground);
-  font-size: 14px;
-  right: 0;
-  top: 2px;
-}
-figure.highlight {
-  border-radius: 5px;
-  box-shadow: 0 10px 30px 0 rgba(0,0,0,0.4);
-  padding-top: 30px;
-}
-figure.highlight .table-container {
-  border-radius: 0 0 5px 5px;
-}
-figure.highlight::before {
-  background: #fc625d;
-  box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
-  left: 12px;
-  margin-top: -20px;
-  position: absolute;
-  border-radius: 50%;
-  content: ' ';
-  height: 12px;
-  width: 12px;
-}
-.expand-btn {
-  bottom: 0;
-  color: var(--highlight-foreground);
-  cursor: pointer;
-  display: none;
-  left: 0;
-  right: 0;
-  position: absolute;
-  text-align: center;
-}
-.fold-cover {
-  background-image: linear-gradient(to top, var(--highlight-background) 0, rgba(0,0,0,0) 100%);
-  bottom: 0;
-  display: none;
-  height: 50px;
-  left: 0;
-  right: 0;
-  position: absolute;
-}
-.highlight-fold {
-  max-height: 500px;
-  overflow-y: hidden !important;
-}
-.highlight-fold .expand-btn,
-.highlight-fold .fold-cover {
-  display: block;
+  background-color: #eee;
+  background-image: linear-gradient(#fcfcfc, #eee);
+  border: 1px solid #d5d5d5;
+  border-radius: 3px;
+  font-size: 0.8125em;
+  right: 4px;
+  top: 8px;
 }
 code,
 kbd,
@@ -2775,4 +2678,14 @@ header.header {
   .pagination {
     margin-bottom: 10px;
   }
+}
+.fireworks {
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+}
+.giscus {
+  max-width: unset;
+  box-sizing: border-box;
 }
