@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello World</title>
+    <url>/2024/04/18/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
+first post. Check <a href="https://hexo.io/docs/">documentation</a> for
+more info. If you get any problems when using Hexo, you can find the
+answer in <a
+href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
+you can ask me on <a
+href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>线段树学习笔记</title>
     <url>/2024/04/25/%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>请注意，本文默认大家学过单改区查的基础线段树（包括动态开点）。</p>
@@ -46,15 +74,7 @@ class="math inline">\(1 \le n, m \le {10}^5\)</span>。</p>
 <p>对于每个有 lazy-tag
 的节点，在只有需要用到自己的子节点时才会把修改的命令（lazy-tag）交给子节点。</p>
 <p>lazy-tag 用一个叫做 <code>push_down</code> 的操作下放修改操作。</p>
-<pre><code class="highlight cpp"><span class="function"><span class="type">void</span> <span class="title">p_d_</span><span class="params">(<span class="type">long</span> <span class="type">long</span> u)</span></span>
-<span class="function"></span>&#123;
-  <span class="type">long</span> <span class="type">long</span> L=u&lt;&lt;<span class="number">1</span>,R=u&lt;&lt;<span class="number">1</span>|<span class="number">1</span>;
-  t[L].sum+=t[u].y*(t[L].r-t[L].l+<span class="number">1</span>);<span class="comment">//处理左子树总和</span>
-  t[R].sum+=t[u].y*(t[R].r-t[R].l+<span class="number">1</span>);<span class="comment">//右子树</span>
-  t[L].y+=t[u].y;<span class="comment">//标记下放</span>
-  t[R].y+=t[u].y;<span class="comment">//同上</span>
-  t[u].y=<span class="number">0</span>;<span class="comment">//清零，代表下放结束</span>
-&#125;</code></pre>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">p_d_</span><span class="params">(<span class="type">long</span> <span class="type">long</span> u)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">long</span> <span class="type">long</span> L=u&lt;&lt;<span class="number">1</span>,R=u&lt;&lt;<span class="number">1</span>|<span class="number">1</span>;</span><br><span class="line">	t[L].sum+=t[u].y*(t[L].r-t[L].l+<span class="number">1</span>);<span class="comment">//处理左子树总和</span></span><br><span class="line">	t[R].sum+=t[u].y*(t[R].r-t[R].l+<span class="number">1</span>);<span class="comment">//右子树</span></span><br><span class="line">	t[L].y+=t[u].y;<span class="comment">//标记下放</span></span><br><span class="line">	t[R].y+=t[u].y;<span class="comment">//同上</span></span><br><span class="line">	t[u].y=<span class="number">0</span>;<span class="comment">//清零，代表下放结束</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>其中，<code>y</code> 就是 lazy-tag。</p>
 <p>第二，<code>up_date</code> 函数在符合
 <code>t[u].l&gt;=l&amp;&amp;t[u].r&lt;=r</code> 时，将 lazy-tag
@@ -67,89 +87,7 @@ class="math inline">\(1 \le n, m \le {10}^5\)</span>。</p>
 <p>显然，此时复杂度为 <span class="math inline">\(O(mlogn)\)</span></p>
 <details class="note info no-icon"><summary><p>代码</p>
 </summary>
-<pre><code class="highlight cpp"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span>
-<span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span>
-<span class="keyword">using</span> <span class="keyword">namespace</span> std;
-<span class="type">long</span> <span class="type">long</span> n,m,x,y;
-<span class="type">long</span> <span class="type">long</span> k;
-<span class="type">long</span> <span class="type">long</span> a[<span class="number">500010</span>];
-<span class="keyword">struct</span> <span class="title class_">tree</span>
-&#123;
-  <span class="type">long</span> <span class="type">long</span> l,r,sum,y;
-&#125;t[<span class="number">500010</span>&lt;&lt;<span class="number">2</span>];
-<span class="function"><span class="type">void</span> <span class="title">p_u_</span><span class="params">(<span class="type">long</span> <span class="type">long</span> u)</span></span>
-<span class="function"></span>&#123;
-  t[u].sum=t[u&lt;&lt;<span class="number">1</span>].sum+t[u&lt;&lt;<span class="number">1</span>|<span class="number">1</span>].sum;
-&#125;
-<span class="function"><span class="type">void</span> <span class="title">p_d_</span><span class="params">(<span class="type">long</span> <span class="type">long</span> u)</span></span>
-<span class="function"></span>&#123;
-  <span class="type">long</span> <span class="type">long</span> L=u&lt;&lt;<span class="number">1</span>,R=u&lt;&lt;<span class="number">1</span>|<span class="number">1</span>;
-  t[L].sum+=t[u].y*(t[L].r-t[L].l+<span class="number">1</span>);
-  t[R].sum+=t[u].y*(t[R].r-t[R].l+<span class="number">1</span>);
-  t[L].y+=t[u].y;
-  t[R].y+=t[u].y;
-  t[u].y=<span class="number">0</span>;
-&#125;
-<span class="function"><span class="type">void</span> <span class="title">b_</span><span class="params">(<span class="type">long</span> <span class="type">long</span> u,<span class="type">long</span> <span class="type">long</span> l,<span class="type">long</span> <span class="type">long</span> r)</span></span>
-<span class="function"></span>&#123;
-  t[u].l=l,t[u].r=r;
-  <span class="keyword">if</span>(l==r)
-  &#123;
-    t[u].sum=a[l];
-    <span class="keyword">return</span>;
-  &#125;
-  <span class="type">long</span> <span class="type">long</span> mid=l+r&gt;&gt;<span class="number">1</span>;
-  <span class="built_in">b_</span>(u&lt;&lt;<span class="number">1</span>,l,mid);
-  <span class="built_in">b_</span>(u&lt;&lt;<span class="number">1</span>|<span class="number">1</span>,mid+<span class="number">1</span>,r);
-  <span class="built_in">p_u_</span>(u);
-&#125;
-<span class="function"><span class="type">void</span> <span class="title">u_d_</span><span class="params">(<span class="type">long</span> <span class="type">long</span> u,<span class="type">long</span> <span class="type">long</span> l,<span class="type">long</span> <span class="type">long</span> r,<span class="type">long</span> <span class="type">long</span> c)</span></span>
-<span class="function"></span>&#123;
-  <span class="keyword">if</span>(t[u].l&gt;=l&amp;&amp;t[u].r&lt;=r)
-  &#123;
-    t[u].sum+=c*(t[u].r-t[u].l+<span class="number">1</span>);
-    t[u].y+=c;
-    <span class="keyword">return</span>;
-  &#125;
-  <span class="built_in">p_d_</span>(u);
-  <span class="type">long</span> <span class="type">long</span> mid=(t[u].l+t[u].r)&gt;&gt;<span class="number">1</span>;
-  <span class="keyword">if</span>(l&lt;=mid)<span class="built_in">u_d_</span>(u&lt;&lt;<span class="number">1</span>,x,y,c);
-  <span class="keyword">if</span>(r&gt;mid) <span class="built_in">u_d_</span>(u&lt;&lt;<span class="number">1</span>|<span class="number">1</span>,x,y,c);
-  <span class="built_in">p_u_</span>(u);
-&#125;
-<span class="function"><span class="type">long</span> <span class="type">long</span> <span class="title">q_</span><span class="params">(<span class="type">long</span> <span class="type">long</span> u,<span class="type">long</span> <span class="type">long</span> l,<span class="type">long</span> <span class="type">long</span> r)</span></span>
-<span class="function"></span>&#123;
-  <span class="keyword">if</span>(l&lt;=t[u].l&amp;&amp;r&gt;=t[u].r)<span class="keyword">return</span> t[u].sum;
-  <span class="built_in">p_d_</span>(u);
-  <span class="type">long</span> <span class="type">long</span> mid=(t[u].l+t[u].r)&gt;&gt;<span class="number">1</span>,ans=<span class="number">0</span>;
-  <span class="keyword">if</span>(l&lt;=mid)ans+=<span class="built_in">q_</span>(u&lt;&lt;<span class="number">1</span>,l,r);
-  <span class="keyword">if</span>(r&gt;mid)ans+=<span class="built_in">q_</span>(u&lt;&lt;<span class="number">1</span>|<span class="number">1</span>,l,r);
-  <span class="keyword">return</span> ans;
-&#125;
-<span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>
-<span class="function"></span>&#123;
-  cin&gt;&gt;n&gt;&gt;m;
-  <span class="keyword">for</span>(<span class="type">long</span> <span class="type">long</span> i=<span class="number">1</span>;i&lt;=n;i++)
-  &#123;
-    cin&gt;&gt;a[i];
-  &#125;
-  <span class="built_in">b_</span>(<span class="number">1</span>,<span class="number">1</span>,n);
-  <span class="keyword">while</span>(m--)
-  &#123;
-    cin&gt;&gt;k;
-    <span class="keyword">if</span>(k==<span class="number">1</span>)
-    &#123;
-      cin&gt;&gt;x&gt;&gt;y&gt;&gt;k;
-      <span class="built_in">u_d_</span>(<span class="number">1</span>,x,y,k);
-    &#125;
-    <span class="keyword">else</span>
-    &#123;
-      cin&gt;&gt;x&gt;&gt;y;
-      cout&lt;&lt;<span class="built_in">q_</span>(<span class="number">1</span>,x,y)&lt;&lt;endl;
-    &#125;
-  &#125;
-  <span class="keyword">return</span> <span class="number">0</span>;
-&#125;</code></pre>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">long</span> <span class="type">long</span> n,m,x,y;</span><br><span class="line"><span class="type">long</span> <span class="type">long</span> k;</span><br><span class="line"><span class="type">long</span> <span class="type">long</span> a[<span class="number">500010</span>];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">tree</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">long</span> <span class="type">long</span> l,r,sum,y;</span><br><span class="line">&#125;t[<span class="number">500010</span>&lt;&lt;<span class="number">2</span>];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">p_u_</span><span class="params">(<span class="type">long</span> <span class="type">long</span> u)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	t[u].sum=t[u&lt;&lt;<span class="number">1</span>].sum+t[u&lt;&lt;<span class="number">1</span>|<span class="number">1</span>].sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">p_d_</span><span class="params">(<span class="type">long</span> <span class="type">long</span> u)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">long</span> <span class="type">long</span> L=u&lt;&lt;<span class="number">1</span>,R=u&lt;&lt;<span class="number">1</span>|<span class="number">1</span>;</span><br><span class="line">	t[L].sum+=t[u].y*(t[L].r-t[L].l+<span class="number">1</span>);</span><br><span class="line">	t[R].sum+=t[u].y*(t[R].r-t[R].l+<span class="number">1</span>);</span><br><span class="line">	t[L].y+=t[u].y;</span><br><span class="line">	t[R].y+=t[u].y;</span><br><span class="line">	t[u].y=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">b_</span><span class="params">(<span class="type">long</span> <span class="type">long</span> u,<span class="type">long</span> <span class="type">long</span> l,<span class="type">long</span> <span class="type">long</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	t[u].l=l,t[u].r=r;</span><br><span class="line">	<span class="keyword">if</span>(l==r)</span><br><span class="line">	&#123;</span><br><span class="line">		t[u].sum=a[l];</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">long</span> <span class="type">long</span> mid=l+r&gt;&gt;<span class="number">1</span>;</span><br><span class="line">	<span class="built_in">b_</span>(u&lt;&lt;<span class="number">1</span>,l,mid);</span><br><span class="line">	<span class="built_in">b_</span>(u&lt;&lt;<span class="number">1</span>|<span class="number">1</span>,mid+<span class="number">1</span>,r);</span><br><span class="line">	<span class="built_in">p_u_</span>(u);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">u_d_</span><span class="params">(<span class="type">long</span> <span class="type">long</span> u,<span class="type">long</span> <span class="type">long</span> l,<span class="type">long</span> <span class="type">long</span> r,<span class="type">long</span> <span class="type">long</span> c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(t[u].l&gt;=l&amp;&amp;t[u].r&lt;=r)</span><br><span class="line">	&#123;</span><br><span class="line">		t[u].sum+=c*(t[u].r-t[u].l+<span class="number">1</span>);</span><br><span class="line">		t[u].y+=c;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">p_d_</span>(u);</span><br><span class="line">	<span class="type">long</span> <span class="type">long</span> mid=(t[u].l+t[u].r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span>(l&lt;=mid)<span class="built_in">u_d_</span>(u&lt;&lt;<span class="number">1</span>,x,y,c);</span><br><span class="line">	<span class="keyword">if</span>(r&gt;mid) <span class="built_in">u_d_</span>(u&lt;&lt;<span class="number">1</span>|<span class="number">1</span>,x,y,c);</span><br><span class="line">	<span class="built_in">p_u_</span>(u);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">long</span> <span class="type">long</span> <span class="title">q_</span><span class="params">(<span class="type">long</span> <span class="type">long</span> u,<span class="type">long</span> <span class="type">long</span> l,<span class="type">long</span> <span class="type">long</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(l&lt;=t[u].l&amp;&amp;r&gt;=t[u].r)<span class="keyword">return</span> t[u].sum;</span><br><span class="line">	<span class="built_in">p_d_</span>(u);</span><br><span class="line">	<span class="type">long</span> <span class="type">long</span> mid=(t[u].l+t[u].r)&gt;&gt;<span class="number">1</span>,ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span>(l&lt;=mid)ans+=<span class="built_in">q_</span>(u&lt;&lt;<span class="number">1</span>,l,r);</span><br><span class="line">	<span class="keyword">if</span>(r&gt;mid)ans+=<span class="built_in">q_</span>(u&lt;&lt;<span class="number">1</span>|<span class="number">1</span>,l,r);</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">long</span> <span class="type">long</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cin&gt;&gt;a[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">b_</span>(<span class="number">1</span>,<span class="number">1</span>,n);</span><br><span class="line">	<span class="keyword">while</span>(m--)</span><br><span class="line">	&#123;</span><br><span class="line">		cin&gt;&gt;k;</span><br><span class="line">		<span class="keyword">if</span>(k==<span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			cin&gt;&gt;x&gt;&gt;y&gt;&gt;k;</span><br><span class="line">			<span class="built_in">u_d_</span>(<span class="number">1</span>,x,y,k);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			cin&gt;&gt;x&gt;&gt;y;</span><br><span class="line">			cout&lt;&lt;<span class="built_in">q_</span>(<span class="number">1</span>,x,y)&lt;&lt;endl;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 </details>
 <h3 id="权值线段树">权值线段树</h3>
@@ -186,34 +124,5 @@ class="math inline">\(T2\)</span> 上的此节点。反之亦然。</p>
         <tag>线段树</tag>
         <tag>学习笔记</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2024/04/18/hello-world/</url>
-    <content><![CDATA[<p>Hello World!</p>
-<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
-first post. Check <a href="https://hexo.io/docs/">documentation</a> for
-more info. If you get any problems when using Hexo, you can find the
-answer in <a
-href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
-you can ask me on <a
-href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
 </search>
