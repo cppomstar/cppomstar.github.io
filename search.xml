@@ -31,7 +31,7 @@ href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
   <entry>
     <title>线段树学习笔记</title>
     <url>/2024/04/22/%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>请注意，本文默认大家学过单改区查的基础线段树。</p>
+    <content><![CDATA[<p>请注意，本文默认大家学过单改区查的基础线段树（包括动态开点）。</p>
 <h3 id="区间修改懒标记lazy-tag">1. 区间修改：懒标记（lazy-tag）</h3>
 <details class="note info no-icon"><summary><p>【模板】线段树 1</p>
 </summary>
@@ -107,6 +107,10 @@ class="math inline">\(\le {10}^{18}\)</span>。</p>
 开始）<code>0 3 0 0 2 1</code>。</p>
 <h3 id="线段树合并">3. 线段树合并</h3>
 <p>前置知识：权值线段树。</p>
+<blockquote>
+<p>线段树合并是指建立一棵新的线段树，这棵线段树的每个节点都是两棵原线段树对应节点合并后的结果。</p>
+</blockquote>
+<p>很显然我们无法</p>
 ]]></content>
       <categories>
         <category>线段树</category>
