@@ -21,16 +21,16 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"cppomstar.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":true,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="线段树拓展知识点 $+$ 例题分析">
+    <meta name="description" content="线段树拓展知识点 $+$ 例题分析（已完成）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="线段树学习笔记">
 <meta property="og:url" content="http://cppomstar.github.io/2024/04/25/%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="cppomstar&#39;s blog">
-<meta property="og:description" content="线段树拓展知识点 $+$ 例题分析">
+<meta property="og:description" content="线段树拓展知识点 $+$ 例题分析（已完成）">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://oi-wiki.org/geometry/images/scanning.svg">
 <meta property="article:published_time" content="2024-04-25T05:53:08.000Z">
-<meta property="article:modified_time" content="2024-04-30T05:13:48.036Z">
+<meta property="article:modified_time" content="2024-05-08T05:05:12.586Z">
 <meta property="article:author" content="世末歌者">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="线段树">
@@ -62,7 +62,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --><style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
+<!-- hexo injector head_end end --><style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="headband"></div>
@@ -149,7 +149,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BA%E9%97%B4%E4%BF%AE%E6%94%B9%E6%87%92%E6%A0%87%E8%AE%B0lazy-tag"><span class="nav-number">1.</span> <span class="nav-text">区间修改：懒标记（lazy-tag）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%83%E5%80%BC%E7%BA%BF%E6%AE%B5%E6%A0%91"><span class="nav-number">2.</span> <span class="nav-text">权值线段树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%90%88%E5%B9%B6"><span class="nav-number">3.</span> <span class="nav-text">线段树合并</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%AB%E6%8F%8F%E7%BA%BF"><span class="nav-number">4.</span> <span class="nav-text">扫描线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98"><span class="nav-number">5.</span> <span class="nav-text">例题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#t1"><span class="nav-number">5.1.</span> <span class="nav-text">T1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#t2"><span class="nav-number">5.2.</span> <span class="nav-text">T2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#t3"><span class="nav-number">5.3.</span> <span class="nav-text">T3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#t4"><span class="nav-number">5.4.</span> <span class="nav-text">T4</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#t5"><span class="nav-number">5.5.</span> <span class="nav-text">T5</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#t6"><span class="nav-number">5.6.</span> <span class="nav-text">T6</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#t7"><span class="nav-number">5.7.</span> <span class="nav-text">T7</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF%E4%B8%80%E7%94%A8%E4%B8%80%E6%A3%B5%E7%BA%BF%E6%AE%B5%E6%A0%91"><span class="nav-number">5.7.1.</span> <span class="nav-text">思路一，用一棵线段树</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF%E4%BA%8C%E4%B8%A4%E6%A3%B5%E7%BA%BF%E6%AE%B5%E6%A0%91"><span class="nav-number">5.7.2.</span> <span class="nav-text">思路二，两棵线段树</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BA%E9%97%B4%E4%BF%AE%E6%94%B9%E6%87%92%E6%A0%87%E8%AE%B0lazy-tag"><span class="nav-number">1.</span> <span class="nav-text">区间修改：懒标记（lazy-tag）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%83%E5%80%BC%E7%BA%BF%E6%AE%B5%E6%A0%91"><span class="nav-number">2.</span> <span class="nav-text">权值线段树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%90%88%E5%B9%B6"><span class="nav-number">3.</span> <span class="nav-text">线段树合并</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%AB%E6%8F%8F%E7%BA%BF"><span class="nav-number">4.</span> <span class="nav-text">扫描线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98"><span class="nav-number">5.</span> <span class="nav-text">例题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#t1"><span class="nav-number">5.1.</span> <span class="nav-text">T1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#t2"><span class="nav-number">5.2.</span> <span class="nav-text">T2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#t3"><span class="nav-number">5.3.</span> <span class="nav-text">T3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#t4"><span class="nav-number">5.4.</span> <span class="nav-text">T4</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#t5"><span class="nav-number">5.5.</span> <span class="nav-text">T5</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#t6"><span class="nav-number">5.6.</span> <span class="nav-text">T6</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#t7"><span class="nav-number">5.7.</span> <span class="nav-text">T7</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF%E4%B8%80%E7%94%A8%E4%B8%80%E6%A3%B5%E7%BA%BF%E6%AE%B5%E6%A0%91"><span class="nav-number">5.7.1.</span> <span class="nav-text">思路一，用一棵线段树</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF%E4%BA%8C%E4%B8%A4%E6%A3%B5%E7%BA%BF%E6%AE%B5%E6%A0%91"><span class="nav-number">5.7.2.</span> <span class="nav-text">思路二，两棵线段树</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-number">6.</span> <span class="nav-text">小结</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%87%B4%E8%B0%A2"><span class="nav-number">6.1.</span> <span class="nav-text">致谢</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -228,7 +228,7 @@
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
       <meta itemprop="name" content="线段树学习笔记 | cppomstar's blog">
-      <meta itemprop="description" content="线段树拓展知识点 $+$ 例题分析">
+      <meta itemprop="description" content="线段树拓展知识点 $+$ 例题分析（已完成）">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -250,7 +250,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-04-30 13:13:48" itemprop="dateModified" datetime="2024-04-30T13:13:48+08:00">2024-04-30</time>
+      <time title="修改时间：2024-05-08 13:05:12" itemprop="dateModified" datetime="2024-05-08T13:05:12+08:00">2024-05-08</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -287,18 +287,20 @@
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>27 分钟</span>
+      <span>28 分钟</span>
     </span>
 </div>
 
-            <div class="post-description">线段树拓展知识点 $+$ 例题分析</div>
+            <div class="post-description">线段树拓展知识点 $+$ 例题分析（已完成）</div>
         </div>
       </header>
 
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>请注意，本文默认大家学过单改区查的基础线段树（包括动态开点）。</p>
+    <div class="post-body" itemprop="articleBody"><p>请注意，本文默认大家学过单改区查的基础线段树（包括动态开点），若未学，请移步
+<a
+target="_blank" rel="noopener" href="https://oi-wiki.org/ds/seg/">OI-wiki</a>，例题可以使用树状数组的题目。</p>
 <h3 id="区间修改懒标记lazy-tag">区间修改：懒标记（lazy-tag）</h3>
 <details class="note info no-icon"><summary><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3372">【模板】线段树
 1</a></p>
@@ -484,6 +486,25 @@ target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF600E">T6
 target="_blank" rel="noopener" href="https://www.luogu.com.cn/article/9cuyuf44">这篇题解</a>。</p>
 <h5 id="思路二两棵线段树">思路二，两棵线段树</h5>
 <p>思路一的思维难度在于，竖边的处理较为麻烦，那么我们就如法炮制，竖边也建一棵线段树处理。</p>
+<h3 id="小结">小结</h3>
+<p>其实线段树还有不少应用，限于篇幅只能列出一部分。</p>
+<p>赛中一般不会出裸线段树，所以想到用线段树是一个重要环节。</p>
+<p>剩余部分可以参见
+OI-wiki，讲的很清晰。有时间或有需求也可以学习几种线段树变形（李超等）。</p>
+<p>另，由于部分题目代码过于长或因为某题最好自己写代码以学习，所以我没有放。</p>
+<h4 id="致谢">致谢</h4>
+<p>我学校的信息学教练 zxc 以及不是我学校的一位教练
+gtc，为此文提供了例题以及基础；</p>
+<p>OI-wiki 线段树部分编写人员及 OI-wiki
+建设者，为本文线段树合并部分提供了定义以及为扫描线提供动图讲解；</p>
+<p>神秘人物 “副词”，为本博客风格提供建议；</p>
+<p>同学 lqs、whl，为我改代码（T5，lqs），讲解 T4（whl）；</p>
+<p>hexo、github以及 next，为本博客提供支持；</p>
+<p>同学 lyh，帮我调弄 hexo；</p>
+<p>洛谷，提供题目、上传图片、教会我 <span
+class="math inline">\(\KaTeX\)</span>；</p>
+<p><span class="math inline">\(mathjax\)</span>，对本文提供 <span
+class="math inline">\(\KaTeX\)</span> 支持。</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
     </div>
 
@@ -545,13 +566,13 @@ target="_blank" rel="noopener" href="https://www.luogu.com.cn/article/9cuyuf44">
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">15k</span>
+    <span title="站点总字数">16k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">28 分钟</span>
+    <span title="站点阅读时长">29 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">

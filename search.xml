@@ -1,47 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>CPPOM五月邀请赛各题题解</title>
-    <url>/2024/04/29/CPPOM%E4%BA%94%E6%9C%88%E9%82%80%E8%AF%B7%E8%B5%9B-%E5%90%84%E9%A2%98%E9%A2%98%E8%A7%A3/</url>
-    <content><![CDATA[<p>比赛尚未开始，将在结束后3天内写上题解。</p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>题解</category>
-        <category>比赛</category>
-      </categories>
-      <tags>
-        <tag>题解</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2024/04/18/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
-first post. Check <a href="https://hexo.io/docs/">documentation</a> for
-more info. If you get any problems when using Hexo, you can find the
-answer in <a
-href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
-you can ask me on <a
-href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-  </entry>
-  <entry>
     <title>单调队列优化&amp;斜率优化DP</title>
     <url>/2024/05/06/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97%E4%BC%98%E5%8C%96-%E6%96%9C%E7%8E%87%E4%BC%98%E5%8C%96DP/</url>
     <content><![CDATA[<h4 id="单调队列优化-dp">单调队列优化 DP</h4>
@@ -66,7 +25,9 @@ href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
   <entry>
     <title>线段树学习笔记</title>
     <url>/2024/04/25/%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>请注意，本文默认大家学过单改区查的基础线段树（包括动态开点）。</p>
+    <content><![CDATA[<p>请注意，本文默认大家学过单改区查的基础线段树（包括动态开点），若未学，请移步
+<a
+href="https://oi-wiki.org/ds/seg/">OI-wiki</a>，例题可以使用树状数组的题目。</p>
 <h3 id="区间修改懒标记lazy-tag">区间修改：懒标记（lazy-tag）</h3>
 <details class="note info no-icon"><summary><p><a href="https://www.luogu.com.cn/problem/P3372">【模板】线段树
 1</a></p>
@@ -252,6 +213,25 @@ href="https://www.luogu.com.cn/problem/CF600E">T6</a></h4>
 href="https://www.luogu.com.cn/article/9cuyuf44">这篇题解</a>。</p>
 <h5 id="思路二两棵线段树">思路二，两棵线段树</h5>
 <p>思路一的思维难度在于，竖边的处理较为麻烦，那么我们就如法炮制，竖边也建一棵线段树处理。</p>
+<h3 id="小结">小结</h3>
+<p>其实线段树还有不少应用，限于篇幅只能列出一部分。</p>
+<p>赛中一般不会出裸线段树，所以想到用线段树是一个重要环节。</p>
+<p>剩余部分可以参见
+OI-wiki，讲的很清晰。有时间或有需求也可以学习几种线段树变形（李超等）。</p>
+<p>另，由于部分题目代码过于长或因为某题最好自己写代码以学习，所以我没有放。</p>
+<h4 id="致谢">致谢</h4>
+<p>我学校的信息学教练 zxc 以及不是我学校的一位教练
+gtc，为此文提供了例题以及基础；</p>
+<p>OI-wiki 线段树部分编写人员及 OI-wiki
+建设者，为本文线段树合并部分提供了定义以及为扫描线提供动图讲解；</p>
+<p>神秘人物 “副词”，为本博客风格提供建议；</p>
+<p>同学 lqs、whl，为我改代码（T5，lqs），讲解 T4（whl）；</p>
+<p>hexo、github以及 next，为本博客提供支持；</p>
+<p>同学 lyh，帮我调弄 hexo；</p>
+<p>洛谷，提供题目、上传图片、教会我 <span
+class="math inline">\(\KaTeX\)</span>；</p>
+<p><span class="math inline">\(mathjax\)</span>，对本文提供 <span
+class="math inline">\(\KaTeX\)</span> 支持。</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
         <category>学习笔记</category>
@@ -261,5 +241,46 @@ href="https://www.luogu.com.cn/article/9cuyuf44">这篇题解</a>。</p>
         <tag>学习笔记</tag>
         <tag>线段树</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>CPPOM五月邀请赛各题题解</title>
+    <url>/2024/04/29/CPPOM%E4%BA%94%E6%9C%88%E9%82%80%E8%AF%B7%E8%B5%9B-%E5%90%84%E9%A2%98%E9%A2%98%E8%A7%A3/</url>
+    <content><![CDATA[<p>比赛尚未开始，将在结束后3天内写上题解。</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>题解</category>
+        <category>比赛</category>
+      </categories>
+      <tags>
+        <tag>题解</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2024/04/18/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
+first post. Check <a href="https://hexo.io/docs/">documentation</a> for
+more info. If you get any problems when using Hexo, you can find the
+answer in <a
+href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
+you can ask me on <a
+href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
   </entry>
 </search>
