@@ -158,13 +158,12 @@ class="math inline">\(T2\)</span> 上的此节点。反之亦然。</p>
 <h3 id="扫描线">扫描线</h3>
 <p>下面这张动图，诠释了这种算法在处理面积并上的的大致思路：（感谢
 OI-wiki，面积并处理部分也请参见 OI-wiki）</p>
-<p><img src="https://oi-wiki.org/geometry/images/scanning.svg" /></p>
+<p><img src="https://images.cppomstar.github.io/scanning.svg" /></p>
 <p>本博客则讲述其解决周长并上的解法，详见<a
 href="https://cppomstar.github.io/2024/04/25/%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#t7">T7</a>。</p>
 <h3 id="例题">例题</h3>
 <h4 id="t1">T1</h4>
-<p><img
-src="https://cdn.luogu.com.cn/upload/image_hosting/kxlc0zkg.png" /></p>
+<p><img src="https://images.cppomstar.github.io/segtreeT1.png" /></p>
 <p>首先的思路是暴力（二维前缀和），然而会时间和空间超限。</p>
 <p>优化：因为“星星按y坐标增序给出，y坐标相同的按x坐标增序给出”，所以只需查找从
 <span class="math inline">\(0\)</span>
