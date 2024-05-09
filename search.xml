@@ -1,47 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>CPPOM五月邀请赛各题题解</title>
-    <url>/2024/04/29/CPPOM%E4%BA%94%E6%9C%88%E9%82%80%E8%AF%B7%E8%B5%9B-%E5%90%84%E9%A2%98%E9%A2%98%E8%A7%A3/</url>
-    <content><![CDATA[<p>比赛尚未开始，将在结束后3天内写上题解。</p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>题解</category>
-        <category>比赛</category>
-      </categories>
-      <tags>
-        <tag>题解</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2024/04/18/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
-first post. Check <a href="https://hexo.io/docs/">documentation</a> for
-more info. If you get any problems when using Hexo, you can find the
-answer in <a
-href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
-you can ask me on <a
-href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-  </entry>
-  <entry>
     <title>单调队列优化&amp;斜率优化DP</title>
     <url>/2024/05/06/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97%E4%BC%98%E5%8C%96-%E6%96%9C%E7%8E%87%E4%BC%98%E5%8C%96DP/</url>
     <content><![CDATA[<h4 id="单调队列优化-dp">单调队列优化 DP</h4>
@@ -51,6 +10,19 @@ href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 <p>每当一个新的数加入，当队尾大于等于/小于等于（取决于每一道题目）这个数时，弹出队尾（于是这不是严格的队列）并继续比较直到队尾不满足其大于等于/小于等于这个数或队列空。然后将这个数加入队尾。</p>
 <p>还有一个操作：当队头在此区间之外时，弹出队头。</p>
 <h5 id="如何优化">如何优化？</h5>
+<p><a href="https://www.luogu.com.cn/problem/CF372C">例题</a></p>
+<p>状态设计可以想到是当放第 <span class="math inline">\(i\)</span>
+个烟花的时候你在 <span class="math inline">\(j\)</span>
+位置能获得的最大开心度。</p>
+<p>转移方程依据题意，是 <span class="math inline">\(f_{i,j}=\max\lbrace
+f_{i-1,k}+b_i-|a_i-j|\rbrace\)</span>。</p>
+<details class="note info no-icon"><summary><p>此处 <span class="math inline">\(k\)</span> 范围</p>
+</summary>
+<p><span class="math display">\[
+j-(t_i-t_{i-1})\times d\le k \le j+(t_i-t_{i-1})\times d
+\]</span></p>
+
+</details>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
         <category>学习笔记</category>
@@ -265,7 +237,7 @@ OI-wiki，讲的很清晰。有时间或有需求也可以学习几种线段树�
 gtc，为此文提供了例题以及基础；</p>
 <p>OI-wiki 线段树部分编写人员及 OI-wiki
 建设者，为本文线段树合并部分提供了定义以及为扫描线提供动图讲解；</p>
-<p>神秘人物 “副词”，为本博客风格提供建议；</p>
+<p>我之前的英语老师 Cally，为本博客风格提供建议；</p>
 <p>同学 lqs、whl，为我改代码（T5，lqs），讲解 T4（whl）；</p>
 <p>hexo、github以及 next，为本博客提供支持；</p>
 <p>同学 lyh，帮我调弄 hexo；</p>
@@ -282,5 +254,46 @@ class="math inline">\(\LaTeX\)</span> 支持。</p>
         <tag>学习笔记</tag>
         <tag>线段树</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>CPPOM五月邀请赛各题题解</title>
+    <url>/2024/04/29/CPPOM%E4%BA%94%E6%9C%88%E9%82%80%E8%AF%B7%E8%B5%9B-%E5%90%84%E9%A2%98%E9%A2%98%E8%A7%A3/</url>
+    <content><![CDATA[<p>比赛尚未开始，将在结束后3天内写上题解。</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>题解</category>
+        <category>比赛</category>
+      </categories>
+      <tags>
+        <tag>题解</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2024/04/18/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
+first post. Check <a href="https://hexo.io/docs/">documentation</a> for
+more info. If you get any problems when using Hexo, you can find the
+answer in <a
+href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
+you can ask me on <a
+href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
   </entry>
 </search>
