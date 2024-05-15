@@ -2815,15 +2815,15 @@ header.header {
     padding: 10px 12px;
   }
 }
+.giscus {
+  max-width: unset;
+  box-sizing: border-box;
+}
 .fireworks {
   left: 0;
   pointer-events: none;
   position: fixed;
   top: 0;
-}
-.giscus {
-  max-width: unset;
-  box-sizing: border-box;
 }
 body {
   background: url("/images/background.png");

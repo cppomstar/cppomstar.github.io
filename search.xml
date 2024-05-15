@@ -68,11 +68,8 @@ dp_j=a_id_j+dp_i
 <span class="math inline">\((y_2-y_1)/(x_2-x_1)\)</span>，我们会发现这个斜率<strong>只与
 <span class="math inline">\(j\)</span>
 有关</strong>，于是可以用单调队列！</p>
-<div class="note danger"><p>还有一点，<span class="math inline">\(x\)</span> 与 <span class="math inline">\(k\)</span> 要单调增加。</p>
-<p>否则后文提到的一切都成了扯淡。</p>
-</div>
-<div class="note danger"><h4 id="danger-header">Danger Header</h4>
-<p><strong>Welcome</strong> to <a href="https://hexo.io">Hexo!</a></p>
+<div class="note warning"><p>还有一点，<span class="math inline">\(x\)</span> 与 <span class="math inline">\(k\)</span> 要单调增加。</p>
+<p>否则后文提到的一切都没用了。</p>
 </div>
 <h5 id="求某个-dp_i">求某个 <span class="math inline">\(dp_i\)</span></h5>
 <p>我们要求最优点，设它为 <span class="math inline">\(v\)</span>。</p>
