@@ -7,7 +7,7 @@
 <h5 id="单调队列">单调队列</h5>
 <p>注意，其与优先队列不是同一种数据结构。（其实也不是严格的队列）</p>
 <p><a href="https://www.luogu.com.cn/problem/P1886">其模板题</a>。</p>
-<p>每当一个新的数加入，当队尾大于等于/小于等于（取决于每一道题目）这个数时，弹出队尾（于是这不是严格的队列）并继续比较直到队尾不满足其大于等于/小于等于这个数或队列空。然后将这个数加入队尾。</p>
+<p>每当一个新的数加入，当队尾大于等于/小于等于（取决于每一道题目）这个数时，弹出队尾（因此这不是严格的队列）并继续比较直到队尾不满足其大于等于/小于等于这个数或队列空。然后将这个数加入队尾。</p>
 <p>还有一个操作：当队头在此区间之外时，弹出队头。</p>
 <h5 id="似乎无法优化-dp">似乎无法优化 DP？</h5>
 <p><a href="https://www.luogu.com.cn/problem/CF372C">例题</a></p>
@@ -85,6 +85,12 @@ dp_j=a_id_j+dp_i
 <p>假设在这里面 <span class="math inline">\(12\)</span> 的斜率小于 <span class="math inline">\(k\)</span>，<span class="math inline">\(34\)</span> 的斜率大于 <span class="math inline">\(k\)</span>，那么最优点就是 <span class="math inline">\(2\)</span>（如下图，蓝色直线即为斜率为 <span class="math inline">\(k\)</span> 的直线）。</p>
 <p><img src="https://cppomstar.github.io/images/xielvDPno3.png"></p>
 <p>然后我们发现这部分用单调队列做非常容易。</p>
+<h6 id="入队">入队</h6>
+<p>我们现在要处理一个斜率：<span class="math inline">\((y_2-y_1)/(x_2-x_1)\)</span>。</p>
+<p>斜率要<strong>单调上升</strong>，因为是下凸壳。</p>
+<p>如果准备进队了发现斜率不单调上升，就把前面弹走。</p>
+<p>比如这个例子（By OI Painter）：</p>
+<p><img src="https://cppomstar.github.io/images/xielvDPno4.png"></p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
         <category>学习笔记</category>
