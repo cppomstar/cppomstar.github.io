@@ -141,15 +141,17 @@ dp_j=a_id_j+dp_i
 
     </div>
 </div>
+<p>然而我想说点有关代码的事：</p>
 <details class="note success"><summary><p>既然写到了代码</p>
 </summary>
 <p>首先要有一个良好的代码习惯，比如记住上面那个代码，当作模板；</p>
 <p>第二是我个人倡导的把大括号写开，即：</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="comment">/*...*/</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/*do sth*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>而不是</p>
+<p>而不是用</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="comment">/*...*/</span>)&#123;</span><br><span class="line">    <span class="comment">/*do sth*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>或者其他难以找到这个大括号对应的前面的或后面的在哪、难以调试的代码风格。这样可以更好地调试，也可以有更好的心态（这是作为
-OIer 很重要的一点）。</p>
+<p>或者其他难以找到这个大括号对应的前面的或后面的在哪、难以调试的代码风格。</p>
+<p>这样可以更好地调试，也可以有更好的心态（这是作为 OIer
+很重要的一点）。</p>
 <p>第三就是如果遇到毒瘤出题人卡精度，使用 <code>slope</code>
 会有精度误差时，可以像我的同学 ly 那样写一个 <code>slope_fz</code> 和
 <code>slope_fm</code>
