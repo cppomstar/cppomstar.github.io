@@ -8,7 +8,7 @@
 <p>注意，其与优先队列不是同一种数据结构。（其实也不是严格的队列）</p>
 <p><a href="https://www.luogu.com.cn/problem/P1886">其模板题</a>。</p>
 <p>每当一个新的数加入，当队尾大于等于/小于等于（取决于每一道题目）这个数时，弹出队尾（因此这不是严格的队列）并继续比较直到队尾不满足其大于等于/小于等于这个数或队列空。然后将这个数加入队尾。</p>
-<p>还有一个操作：当队头在此区间之外时，弹出队头。</p>
+<p>还有一个操作：当队头不优时，弹出队头。</p>
 <h5 id="似乎无法优化-dp">似乎无法优化 DP？</h5>
 <p><a href="https://www.luogu.com.cn/problem/CF372C">例题</a></p>
 <p>状态设计可以想到是当放第 <span class="math inline">\(i\)</span>
@@ -89,8 +89,17 @@ dp_j=a_id_j+dp_i
 <p>我们现在要处理一个斜率：<span class="math inline">\((y_2-y_1)/(x_2-x_1)\)</span>。</p>
 <p>斜率要<strong>单调上升</strong>，因为是下凸壳。</p>
 <p>如果准备进队了发现斜率不单调上升，就把前面弹走。</p>
-<p>比如这个例子（By OI Painter）：</p>
+<p>每次进队后就大致像下图的结构（By OI Painter）：</p>
 <p><img src="https://cppomstar.github.io/images/xielvDPno4.png"></p>
+<h6 id="出队">出队</h6>
+<p>注意，这说的是前面提到的“当队头不优时，弹出队头”。</p>
+<p>设队头的两个点分别是 <span class="math inline">\(v_1\)</span> 和
+<span class="math inline">\(v_2\)</span>。</p>
+<p>如果 <span class="math inline">\(v_1v_2\)</span>
+这条线段的斜率小于<strong>等于</strong>（我认为此处应该有等于，因为我们的条件是“左边的斜率小于
+<span class="math inline">\(k\)</span>，右边的的斜率大于 <span class="math inline">\(k\)</span>”） <span class="math inline">\(k\)</span>，就可以把 <span class="math inline">\(v_1\)</span> 弹出去了（如上，不可能最优）。</p>
+<p>然后一直弹，弹到 <span class="math inline">\(v_1v_2\)</span>
+这条线段的斜率大于 <span class="math inline">\(k\)</span>，此时队头就是这个 <span class="math inline">\(dp_i\)</span> 的最优点。</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
         <category>学习笔记</category>
