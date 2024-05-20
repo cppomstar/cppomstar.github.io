@@ -100,13 +100,60 @@ dp_j=a_id_j+dp_i
 <span class="math inline">\(k\)</span>，右边的的斜率大于 <span class="math inline">\(k\)</span>”） <span class="math inline">\(k\)</span>，就可以把 <span class="math inline">\(v_1\)</span> 弹出去了（如上，不可能最优）。</p>
 <p>然后一直弹，弹到 <span class="math inline">\(v_1v_2\)</span>
 这条线段的斜率大于 <span class="math inline">\(k\)</span>，此时队头就是这个 <span class="math inline">\(dp_i\)</span> 的最优点。</p>
-<h5 id="求所有的-dp_i">求所有的 <span class="math inline">\(dp_i\)</span></h5>
+<h5 id="快速地求所有的-dp_i">（快速地）求所有的 <span class="math inline">\(dp_i\)</span></h5>
 <p>然而我们会发现一个显著的问题：</p>
 <details class="note danger"><summary><p>问题</p>
 </summary>
 <p>求一个 <span class="math inline">\(dp_i\)</span> 是 <span class="math inline">\(O(n)\)</span> 的。</p>
 <p>求所有的是 <span class="math inline">\(O(n^2)\)</span> 的。</p>
-<p>那这和暴力似乎没有区别啊？</p>
+<p>那这和暴力似乎没有区别。</p>
+
+</details>
+<p>我们来列一下各个 <span class="math inline">\(dp_i\)</span>
+要处理的决策点：</p>
+<p>举个例子，有两个数，<span class="math inline">\(j\)</span> 和 <span class="math inline">\(o\)</span>。</p>
+<p>不妨设 <span class="math inline">\(j&lt;o\)</span>。</p>
+<p><span class="math inline">\(dp_j\)</span>
+要处理的之前的决策点是：</p>
+<p><span class="math display">\[
+{v_0,v_1,\dots,s_j}
+\]</span></p>
+<p><span class="math inline">\(dp_o\)</span>
+要处理的之前的决策点是：</p>
+<p><span class="math display">\[
+{v_0,v_1,\dots,s_j,\dots,s_o}
+\]</span></p>
+<p>前面的 <span class="math inline">\({v_0,v_1,\dots,s_j}\)</span>
+是重复的，可以避免这些重复的扫描。</p>
+<details class="note info"><summary><p>方法</p>
+</summary>
+<p>《算法竞赛》上我觉得讲麻烦了，我讲一下我的想法：</p>
+<p>我们前文保证过“<span class="math inline">\(x\)</span> 与 <span class="math inline">\(k\)</span> 单调增加”，于是 <span class="math inline">\(k_o\)</span> 的斜率一定大于 <span class="math inline">\(k_j\)</span> 的。</p>
+<p>于是我们只用一个单调队列从头到尾处理即可，每次处理完剩下的数据后一个位置还能用。</p>
+
+</details>
+<div class="spoiler collapsed">
+    <div class="spoiler-title">
+        main code
+    </div>
+    <div class="spoiler-content">
+        <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span>(h&lt;t&amp;&amp;slope<span class="comment">/*斜率函数，但这个词一般表示“斜坡”*/</span>(q[h],q[h+<span class="number">1</span>])&lt;k)h++;</span><br><span class="line">    dp[i]=<span class="comment">/*状态转移方程*/</span>;</span><br><span class="line">    <span class="keyword">while</span>(h&lt;t&amp;&amp;<span class="built_in">slope</span>(i,q[t<span class="number">-1</span>])&lt;<span class="built_in">slope</span>(q[t<span class="number">-1</span>],q[t]))t--;</span><br><span class="line">    q[++t]=i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+</div>
+<details class="note success"><summary><p>既然写到了代码</p>
+</summary>
+<p>首先要有一个良好的代码习惯，比如记住上面那个代码，当作模板；</p>
+<p>第二是我个人倡导的把大括号写开，即：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="comment">/*...*/</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/*do sth*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>而不是</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="comment">/*...*/</span>)&#123;</span><br><span class="line">    <span class="comment">/*do sth*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>或者其他难以找到这个大括号对应的前面的或后面的在哪、难以调试的代码风格。这样可以更好地调试，也可以有更好的心态（这是作为
+OIer 很重要的一点）。</p>
+<p>第三就是如果遇到毒瘤出题人卡精度，使用 <code>slope</code>
+会有精度误差时，可以像我的同学 ly 那样写一个 <code>slope_fz</code> 和
+<code>slope_fm</code>
+函数，比较时就交叉相乘（不会有不等号反向因为在斜率优化里斜率都<strong>必须</strong>是正的）。</p>
 
 </details>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
