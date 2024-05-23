@@ -2488,7 +2488,7 @@ mjx-container[display='true'] + br {
 }
 header.header {
   background: var(--content-bg-color);
-  border-radius: 20px 20px 20px 20px;
+  border-radius: 15px 15px 15px 15px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
 }
 @media (max-width: 991px) {
@@ -2525,7 +2525,7 @@ header.header {
   }
 }
 .main-inner {
-  border-radius: 20px 20px 20px 20px;
+  border-radius: 15px 15px 15px 15px;
   box-sizing: border-box;
   width: calc(100% - 252px);
 }
@@ -2661,7 +2661,7 @@ header.header {
 }
 .sidebar-inner {
   background: var(--content-bg-color);
-  border-radius: 20px;
+  border-radius: 15px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
   box-sizing: border-box;
   color: var(--text-color);
@@ -2727,11 +2727,11 @@ header.header {
 .main-inner .comment-position .comments,
 .main-inner .pagination {
   background: var(--content-bg-color);
-  border-radius: 20px 20px 20px 20px;
+  border-radius: 15px 15px 15px 15px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
 }
 .main-inner .post-block:not(:first-child):not(:first-child) {
-  border-radius: 20px;
+  border-radius: 15px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
   margin-top: 12px;
 }
@@ -2749,7 +2749,7 @@ header.header {
 .main-inner > .comments,
 .main-inner .comment-position .comments,
 .main-inner .pagination {
-  border-radius: 20px;
+  border-radius: 15px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
   margin-top: 12px;
 }
@@ -2826,32 +2826,9 @@ header.header {
   box-sizing: border-box;
 }
 body {
-  background: url("https://cppomstar.github.io/images/background.png");
+  background: url("/images/background.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
-}
-.post-block {
-  background-color: #fff;
-  margin-bottom: 24px;
-  padding: 20px;
-  border-radius: 30px 50px 30px 50px;
-  box-shadow: 8px 7px 2px 0 rgba(0,0,0,0.12), 7px 4px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
-}
-.main-inner {
-  background-color: rgba(255,255,255,0);
-  padding: 0px 40px 40px 40px;
-}
-.header-inner {
-  border-radius: 30px 30px 30px 30px;
-  box-shadow: 8px 7px 2px 0 rgba(0,0,0,0.12), 7px 4px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
-}
-.sidebar-inner {
-  border-radius: 30px 30px 30px 30px;
-  box-shadow: 8px 7px 2px 0 rgba(0,0,0,0.12), 7px 4px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
-}
-.pagination {
-  border-radius: 30px 80px 30px 80px;
-  box-shadow: 8px 7px 2px 0 rgba(0,0,0,0.12), 7px 4px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
 }
