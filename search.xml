@@ -501,6 +501,32 @@ gtc，为此文提供了例题以及基础；</p>
 
     </div>
 </div>
+<h3 id="t6">T6</h3>
+<p>见<a href="https://cppomstar.github.io/2024/04/25/%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#t7">此</a>。</p>
+<h3 id="t7">T7</h3>
+<p>见<a href="https://cppomstar.github.io/2024/04/25/%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#t5">此</a>。</p>
+<h3 id="t8">T8</h3>
+<p>咕咕咕</p>
+<div class="spoiler collapsed">
+    <div class="spoiler-title">
+        std
+    </div>
+    <div class="spoiler-content">
+        <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">cout&lt;&lt;<span class="string">&quot;咕咕咕&quot;</span>&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
+
+    </div>
+</div>
+<h3 id="t9">T9</h3>
+<p>咕咕咕</p>
+<div class="spoiler collapsed">
+    <div class="spoiler-title">
+        std
+    </div>
+    <div class="spoiler-content">
+        <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">cout&lt;&lt;<span class="string">&quot;咕咕咕&quot;</span>&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
+
+    </div>
+</div>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
         <category>题解</category>
