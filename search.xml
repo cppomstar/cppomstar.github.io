@@ -429,6 +429,39 @@ gtc，为此文提供了例题以及基础；</p>
       </tags>
   </entry>
   <entry>
+    <title>一个挺帅挺不错的对称</title>
+    <url>/2024/05/28/%E4%B8%80%E4%B8%AA%E6%8C%BA%E5%B8%85%E6%8C%BA%E4%B8%8D%E9%94%99%E7%9A%84%E5%AF%B9%E7%A7%B0/</url>
+    <content><![CDATA[<p>在做一道题：</p>
+<blockquote>
+<p>直线 <span class="math inline">\(l_1\)</span> 与 <span class="math inline">\(l_2\)</span> 关于 <span class="math inline">\(y=x\)</span> 对称，其中 <span class="math inline">\(l_1:\ y=3x-b,\ l2:\ y=ax+2\)</span>，问 <span class="math inline">\(a=?,b=?\)</span>。</p>
+</blockquote>
+<p>我不太会，于是请教了 lqs。</p>
+<h4 id="他讲的内容">他讲的内容</h4>
+<p><span class="math display">\[
+y=ax+b
+\]</span></p>
+<p>对称后应是</p>
+<p><span class="math display">\[
+x=ay+b
+\]</span></p>
+<p>一些计算后，变为：</p>
+<p><span class="math display">\[
+y=\frac{1}{a}x-\frac{b}{a}
+\]</span></p>
+<p>所以，原题中 <span class="math inline">\(a=\frac{1}{3},b=6\)</span>。</p>
+<h4 id="desmos-程序演示">desmos 程序演示</h4>
+<p><a href="https://www.desmos.com/calculator/fgaxpmba9v?lang=zh-CN">体验地址</a>。</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>数学</category>
+        <category>函数</category>
+      </categories>
+      <tags>
+        <tag>数学</tag>
+        <tag>函数</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>重修：四边形不等式 DP</title>
     <url>/2024/05/20/%E9%87%8D%E4%BF%AE-%E5%9B%9B%E8%BE%B9%E5%BD%A2%E4%B8%8D%E7%AD%89%E5%BC%8FDP/</url>
     <content><![CDATA[
