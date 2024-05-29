@@ -58,6 +58,25 @@ dp_j=max\{dp_{j-kc_i}+kw_i\}
 min\{m_i,\frac{j}{c_i}\}\)</span>。</p>
 <div class="note primary"><p>特别提一下，我这里的各个变量和数组与原题不同，物品个数是 <span class="math inline">\(n\)</span>，体积是 <span class="math inline">\(c_i\)</span>，价值是 <span class="math inline">\(w_i\)</span>，有 <span class="math inline">\(m_i\)</span> 个，背包大小是 <span class="math inline">\(C\)</span>。</p>
 </div>
+<p>打暴力的代码的话，是三层循环，我们发现 <span class="math inline">\(i,j\)</span> 之间没有关系，但是 <span class="math inline">\(j,k\)</span> 有关系，<span class="math inline">\(k\)</span> 在 <span class="math inline">\(j\)</span> 上有滑动窗口。</p>
+<p>看似无法应用单调队列。</p>
+<p>但是，我们发现：<span class="math inline">\(j+m\times
+c_i=j+(m+p)\times c_i-p\times c_i\)</span>。</p>
+<p>所以我们可以想到，当某些 <span class="math inline">\(j\)</span>
+除以某个 <span class="math inline">\(c_i\)</span> 的余数相同时，他们的
+<span class="math inline">\(k\)</span> 会有重叠。</p>
+<p>那么，我们设 <span class="math inline">\(j=yc_i+b\)</span>，其中
+<span class="math inline">\(b\)</span> 为余数（<span class="math inline">\(j\bmod c_i\)</span>），<span class="math inline">\(y=\lfloor\frac{j}{c_i}\rfloor\)</span>。</p>
+<p>带入，原方程变为：</p>
+<p><span class="math display">\[
+dp_{yc_i+b}=max\{dp_{b+(y-k)c_i}+kw_i\}
+\]</span></p>
+<p>我们发现它看上去还是不能优化。</p>
+<p>然而我们可以令 <span class="math inline">\(x=y-k\)</span>，此时方程变为：</p>
+<p><span class="math display">\[
+dp_{yc_i+b}=max\{dp_{b+xc_i}-xw_i+yw_i\}
+\]</span></p>
+<p>代码还在写。</p>
 <h4 id="斜率优化参考了罗勇军郭卫斌的算法竞赛">斜率优化！（参考了罗勇军、郭卫斌的《算法竞赛》）</h4>
 <p>有一种 DP 转移方程： <span class="math display">\[
 dp_i=\min\{dp_j-a_id_j\}(0\le j&lt;i,d_j\le d_{j+1},a_i\le a_{i+1})
