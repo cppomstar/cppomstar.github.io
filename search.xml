@@ -221,7 +221,7 @@ dp_j+{s_j}^2=2s_is_j+dp_i-{s_i}^2-M
 </ol>
 <div id="两种解决方案" class="tabs">
 <ul class="nav-tabs">
-<li class="tab active">
+<li class="tab">
 <a href="#两种解决方案-1">方法一</a>
 </li>
 <li class="tab">
@@ -229,7 +229,7 @@ dp_j+{s_j}^2=2s_is_j+dp_i-{s_i}^2-M
 </li>
 </ul>
 <div class="tab-content">
-<div id="两种解决方案-1" class="tab-pane active">
+<div id="两种解决方案-1" class="tab-pane">
 <p>
 开 <code>long double</code> 或者写高精度，不推荐。
 </p>
@@ -242,7 +242,7 @@ dp_j+{s_j}^2=2s_is_j+dp_i-{s_i}^2-M
 像上文的代码那样写一个分子函数一个分母函数，比较时交叉相乘，<strong>但一定要注意不等号反向的问题！</strong>
 </p>
 <p>
-同时还能解决分母可能为 <span class="math inline">(0)</span> 的问题。
+同时还能解决分母可能为 <code>0</code> 的问题。
 </p>
 </div>
 </div>
