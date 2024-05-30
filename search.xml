@@ -242,7 +242,7 @@ dp_j+{s_j}^2=2s_is_j+dp_i-{s_i}^2-M
 像上文的代码那样写一个分子函数一个分母函数，比较时交叉相乘，<strong>但一定要注意不等号反向的问题！</strong>
 </p>
 <p>
-同时还能解决分母可能为 <span class="math inline">(0)</span> 的问题。
+同时还能解决分母可能为 $ 0 $ 的问题。
 </p>
 </div>
 </div>
@@ -315,7 +315,8 @@ n!=48658040163532800000\)</span>，显然无法通过。</p>
 <h5 id="用状压-dp-求解">用状压 DP 求解</h5>
 <p>如果用状态压缩子集优化 DP，总复杂度为 <span class="math inline">\(O(n^2\times 2^n)\)</span>，在 <span class="math inline">\(n=20\)</span> 时，<span class="math inline">\(n^2\times 2^n\approx 4\times
 10^8\)</span>，复杂度远优于暴力，可以通过。</p>
-<p>我们设整个图的一个子集为 <span class="math inline">\(S\)</span>，且用</p>
+<p>我们设整个图的一个子集为 <span class="math inline">\(S\)</span>，且用
+<span class="math inline">\(dp_{S,j}\)</span> 表示</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
         <category>学习笔记</category>
@@ -537,10 +538,23 @@ gtc，为此文提供了例题以及基础；</p>
     <content><![CDATA[<p><a href="https://theme-next.js.org/docs/tag-plugins/tabs">我们知道，next
 自带了一个东西叫 tabs</a>。</p>
 <p>然而它有点 bug。</p>
-<p>若你还用了代码自动折叠（点个键自动展开那个），那么当你切换不同的 tabs
-时他会叠很多层。</p>
-<p>把 next 主题下的对应地方改成这样就可以了：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Fold code block</span><br><span class="line">fold:</span><br><span class="line">  enable: false</span><br><span class="line">  height: 500</span><br></pre></td></tr></table></figure>
+<p>如果你用 mathjax 渲染（没试过 <span class="math inline">\(\KaTeX\)</span> 会不会），比如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% tabs 两种解决方案, -1 %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab 方法一 --&gt;</span><br><span class="line"></span><br><span class="line">开 `long double` 或者写高精度，不推荐。</span><br><span class="line"></span><br><span class="line">但一般不卡精度时直接除就可以了。</span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab 方法二 --&gt;</span><br><span class="line"></span><br><span class="line">像上文的代码那样写一个分子函数一个分母函数，比较时交叉相乘，**但一定要注意不等号反向的问题！**</span><br><span class="line"></span><br><span class="line">同时还能解决分母可能为 $0$ 的问题。</span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
+<p>会长这样：</p>
+<div class="tabs" id="两种解决方案"><ul class="nav-tabs"><li class="tab"><a href="#两种解决方案-1">方法一</a></li><li class="tab"><a href="#两种解决方案-2">方法二</a></li></ul><div class="tab-content"><div class="tab-pane" id="两种解决方案-1"><p>开 <code>long double</code> 或者写高精度，不推荐。</p>
+<p>但一般不卡精度时直接除就可以了。</p></div><div class="tab-pane" id="两种解决方案-2"><p>像上文的代码那样写一个分子函数一个分母函数，比较时交叉相乘，<strong>但一定要注意不等号反向的问题！</strong></p>
+<p>同时还能解决分母可能为 <span class="math inline">\(0\)</span>
+的问题。</p></div></div></div>
+<p>点开“方法二”，我们发现那个 <code>$0$</code> 没渲染出来。</p>
+<p>翻了翻源码，发现似乎这里的源码不太一样：</p>
+<p>正常的：<code>&lt;span class="math inline"&gt;\(0\)&lt;/span&gt;</code></p>
+<p>这里的：<code>&lt;span class="math inline"&gt;(0)&lt;/span&gt;</code></p>
+<p>于是我想到在那个 <code>$0$</code> 左右加空格，变成这样：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% tabs 两种解决方案修复版, -1 %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab 方法一修复版 --&gt;</span><br><span class="line"></span><br><span class="line">开 `long double` 或者写高精度，不推荐。</span><br><span class="line"></span><br><span class="line">但一般不卡精度时直接除就可以了。</span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab 方法二修复版 --&gt;</span><br><span class="line"></span><br><span class="line">像上文的代码那样写一个分子函数一个分母函数，比较时交叉相乘，**但一定要注意不等号反向的问题！**</span><br><span class="line"></span><br><span class="line">同时还能解决分母可能为 $ 0 $ 的问题。</span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
+<p>然后，就好了！</p>
+<div class="tabs" id="两种解决方案修复版"><ul class="nav-tabs"><li class="tab"><a href="#两种解决方案修复版-1">方法一修复版</a></li><li class="tab"><a href="#两种解决方案修复版-2">方法二修复版</a></li></ul><div class="tab-content"><div class="tab-pane" id="两种解决方案修复版-1"><p>开 <code>long double</code> 或者写高精度，不推荐。</p>
+<p>但一般不卡精度时直接除就可以了。</p></div><div class="tab-pane" id="两种解决方案修复版-2"><p>像上文的代码那样写一个分子函数一个分母函数，比较时交叉相乘，<strong>但一定要注意不等号反向的问题！</strong></p>
+<p>同时还能解决分母可能为 $ 0 $ 的问题。</p></div></div></div>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
         <category>hexo or next 配置</category>
