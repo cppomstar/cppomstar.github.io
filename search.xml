@@ -242,7 +242,7 @@ dp_j+{s_j}^2=2s_is_j+dp_i-{s_i}^2-M
 像上文的代码那样写一个分子函数一个分母函数，比较时交叉相乘，<strong>但一定要注意不等号反向的问题！</strong>
 </p>
 <p>
-同时还能解决分母可能为 $ 0 $ 的问题。
+同时还能解决分母可能为 <span class="math inline">(0)</span> 的问题。
 </p>
 </div>
 </div>
@@ -538,14 +538,10 @@ gtc，为此文提供了例题以及基础；</p>
     <content><![CDATA[<p><a href="https://theme-next.js.org/docs/tag-plugins/tabs">我们知道，next
 自带了一个东西叫 tabs</a>。</p>
 <p>然而它有点 bug。</p>
-<p>如果你用 mathjax 渲染（没试过 <span class="math inline">\(\KaTeX\)</span> 会不会），比如：</p>
+<p>如果你用 mathjax 渲染，比如：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% tabs 两种解决方案, -1 %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab 方法一 --&gt;</span><br><span class="line"></span><br><span class="line">开 `long double` 或者写高精度，不推荐。</span><br><span class="line"></span><br><span class="line">但一般不卡精度时直接除就可以了。</span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab 方法二 --&gt;</span><br><span class="line"></span><br><span class="line">像上文的代码那样写一个分子函数一个分母函数，比较时交叉相乘，**但一定要注意不等号反向的问题！**</span><br><span class="line"></span><br><span class="line">同时还能解决分母可能为 $0$ 的问题。</span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
-<p>会长这样：</p>
-<div class="tabs" id="两种解决方案"><ul class="nav-tabs"><li class="tab"><a href="#两种解决方案-1">方法一</a></li><li class="tab"><a href="#两种解决方案-2">方法二</a></li></ul><div class="tab-content"><div class="tab-pane" id="两种解决方案-1"><p>开 <code>long double</code> 或者写高精度，不推荐。</p>
-<p>但一般不卡精度时直接除就可以了。</p></div><div class="tab-pane" id="两种解决方案-2"><p>像上文的代码那样写一个分子函数一个分母函数，比较时交叉相乘，<strong>但一定要注意不等号反向的问题！</strong></p>
-<p>同时还能解决分母可能为 <span class="math inline">\(0\)</span>
-的问题。</p></div></div></div>
-<p>点开“方法二”，我们发现那个 <code>$0$</code> 没渲染出来。</p>
+<p>渲染完毕，点开“方法二”，我们发现那个 <code>$0$</code>
+没渲染出来。（不知道咋的没了，大家可以自己试试）</p>
 <p>翻了翻源码，发现似乎这里的源码不太一样：</p>
 <p>正常的：<code>&lt;span class="math inline"&gt;\(0\)&lt;/span&gt;</code></p>
 <p>这里的：<code>&lt;span class="math inline"&gt;(0)&lt;/span&gt;</code></p>
