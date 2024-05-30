@@ -22,31 +22,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"cppomstar.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="还没开始写（可能短时间内不会开始）">
+    <meta name="description" content="现学的（刚开始写）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="重修：四边形不等式 DP">
-<meta property="og:url" content="http://cppomstar.github.io/2024/05/20/%E9%87%8D%E4%BF%AE-%E5%9B%9B%E8%BE%B9%E5%BD%A2%E4%B8%8D%E7%AD%89%E5%BC%8FDP/index.html">
+<meta property="og:title" content="决策单调性 DP">
+<meta property="og:url" content="http://cppomstar.github.io/2024/05/30/%E5%86%B3%E7%AD%96%E5%8D%95%E8%B0%83%E6%80%A7%20DP/index.html">
 <meta property="og:site_name" content="cppomstar&#39;s blog">
-<meta property="og:description" content="还没开始写（可能短时间内不会开始）">
+<meta property="og:description" content="现学的（刚开始写）">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-05-20T06:08:24.000Z">
-<meta property="article:modified_time" content="2024-05-23T05:01:58.190Z">
+<meta property="article:published_time" content="2024-05-30T11:13:24.000Z">
+<meta property="article:modified_time" content="2024-05-30T11:14:01.072Z">
 <meta property="article:author" content="世末歌者">
 <meta property="article:tag" content="DP">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="优化">
-<meta property="article:tag" content="重修">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://cppomstar.github.io/2024/05/20/%E9%87%8D%E4%BF%AE-%E5%9B%9B%E8%BE%B9%E5%BD%A2%E4%B8%8D%E7%AD%89%E5%BC%8FDP/">
+<link rel="canonical" href="http://cppomstar.github.io/2024/05/30/%E5%86%B3%E7%AD%96%E5%8D%95%E8%B0%83%E6%80%A7%20DP/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://cppomstar.github.io/2024/05/20/%E9%87%8D%E4%BF%AE-%E5%9B%9B%E8%BE%B9%E5%BD%A2%E4%B8%8D%E7%AD%89%E5%BC%8FDP/","path":"2024/05/20/重修-四边形不等式DP/","title":"重修：四边形不等式 DP"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://cppomstar.github.io/2024/05/30/%E5%86%B3%E7%AD%96%E5%8D%95%E8%B0%83%E6%80%A7%20DP/","path":"2024/05/30/决策单调性 DP/","title":"决策单调性 DP"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>重修：四边形不等式 DP | cppomstar's blog</title>
+<title>决策单调性 DP | cppomstar's blog</title>
   
 
 
@@ -63,7 +62,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --><style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
+<!-- hexo injector head_end end --><style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="headband"></div>
@@ -204,7 +203,7 @@
 <div class="widget-wrap">
 <div id="myCanvasContainer" class="widget tagcloud">
 <canvas width="250" height="250" id="resCanvas" style="width=100%">
-<ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DP/" rel="tag">DP</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug-%E7%9A%84%E4%BF%AE%E5%A4%8D/" rel="tag">bug 的修复</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-or-next/" rel="tag">hexo or next</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%98%E5%8C%96/" rel="tag">优化</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%BD%E6%95%B0/" rel="tag">函数</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA/" rel="tag">查漏补缺</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/" rel="tag">线段树</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E4%BF%AE/" rel="tag">重修</a><span class="tag-list-count">2</span></li></ul>
+<ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DP/" rel="tag">DP</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug-%E7%9A%84%E4%BF%AE%E5%A4%8D/" rel="tag">bug 的修复</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-or-next/" rel="tag">hexo or next</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%98%E5%8C%96/" rel="tag">优化</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%BD%E6%95%B0/" rel="tag">函数</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA/" rel="tag">查漏补缺</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/" rel="tag">线段树</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E4%BF%AE/" rel="tag">重修</a><span class="tag-list-count">1</span></li></ul>
 </canvas>
 </div>
 </div>
@@ -225,7 +224,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://cppomstar.github.io/2024/05/20/%E9%87%8D%E4%BF%AE-%E5%9B%9B%E8%BE%B9%E5%BD%A2%E4%B8%8D%E7%AD%89%E5%BC%8FDP/">
+    <link itemprop="mainEntityOfPage" href="http://cppomstar.github.io/2024/05/30/%E5%86%B3%E7%AD%96%E5%8D%95%E8%B0%83%E6%80%A7%20DP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://cppomstar.github.io/images/avatar.jpg">
@@ -238,12 +237,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="重修：四边形不等式 DP | cppomstar's blog">
-      <meta itemprop="description" content="还没开始写（可能短时间内不会开始）">
+      <meta itemprop="name" content="决策单调性 DP | cppomstar's blog">
+      <meta itemprop="description" content="现学的（刚开始写）">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          重修：四边形不等式 DP
+          决策单调性 DP
         </h1>
 
         <div class="post-meta-container">
@@ -253,15 +252,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2024-05-20 14:08:24" itemprop="dateCreated datePublished" datetime="2024-05-20T14:08:24+08:00">2024-05-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-05-23 13:01:58" itemprop="dateModified" datetime="2024-05-23T13:01:58+08:00">2024-05-23</time>
+      <time title="创建时间：2024-05-30 19:13:24 / 修改时间：19:14:01" itemprop="dateCreated datePublished" datetime="2024-05-30T19:13:24+08:00">2024-05-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -306,7 +299,7 @@
     </span>
 </div>
 
-            <div class="post-description">还没开始写（可能短时间内不会开始）</div>
+            <div class="post-description">现学的（刚开始写）</div>
         </div>
       </header>
 
@@ -326,21 +319,17 @@
               <a href="/tags/DP/" rel="tag"># DP</a>
               <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"># 学习笔记</a>
               <a href="/tags/%E4%BC%98%E5%8C%96/" rel="tag"># 优化</a>
-              <a href="/tags/%E9%87%8D%E4%BF%AE/" rel="tag"># 重修</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2024/05/11/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97%E4%BC%98%E5%8C%96-%E6%96%9C%E7%8E%87%E4%BC%98%E5%8C%96DP/" rel="prev" title="单调队列 & 斜率优化 DP 学习笔记">
-                  <i class="fa fa-angle-left"></i> 单调队列 & 斜率优化 DP 学习笔记
+                <a href="/2024/05/30/next-%E8%87%AA%E5%B8%A6-tab-%E7%9A%84-bug-%E4%BF%AE%E5%A4%8D/" rel="prev" title="next 自带 tab 的 bug 修复">
+                  <i class="fa fa-angle-left"></i> next 自带 tab 的 bug 修复
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2024/05/20/%E9%87%8D%E4%BF%AE-%E6%95%B0%E4%BD%8D%E7%BB%9F%E8%AE%A1DP/" rel="next" title="重修：数位统计 DP">
-                  重修：数位统计 DP <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -377,13 +366,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">23k</span>
+    <span title="站点总字数">22k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">21 分钟</span>
+    <span title="站点阅读时长">20 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
