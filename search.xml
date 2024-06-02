@@ -133,9 +133,9 @@ you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p
 zsw
 “我看到我们学的时候有讲到斜率，但我觉得不用斜率也能理解，你觉得如何？”</p>
 <blockquote>
-<p>“当时课上那道黑白边最短路我讲的时候用了斜率，不用斜率我觉得会难理解一点，但其实我没注意。”zsw
-如是说</p>
+<p>“当时课上那道黑白边最小生成树我讲的时候用了斜率，不用斜率我觉得会难理解一点，但其实我没注意。”</p>
 </blockquote>
+<p>zsw 如是说。</p>
 <p>而且我看到他的代码有用到 <code>slope</code> 这一变量名。</p>
 <p>于是我也写上了斜率。</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
