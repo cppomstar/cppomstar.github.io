@@ -59,6 +59,25 @@ m\)</span>），导致没做出来。</p>
 
     </div>
 </div>
+<h3 id="e">E</h3>
+<h4 id="题目大意-2">题目大意</h4>
+<p>给你一个长度为 <span class="math inline">\(N\)</span> 的序列 <span class="math inline">\(A=(A_1,\ldots,A_N)\)</span> 。</p>
+<p>求 <span class="math inline">\(\displaystyle
+\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}\left\lfloor\frac{\max(A_i,A_j)}{\min(A_i,A_j)}\right\rfloor\)</span>
+.</p>
+<p>这里， <span class="math inline">\(\lfloor x \rfloor\)</span>
+表示不大于 <span class="math inline">\(x\)</span> 的最大整数。例如，
+<span class="math inline">\(\lfloor 3.14 \rfloor=3\)</span> 和 <span class="math inline">\(\lfloor 2 \rfloor=2\)</span> 。</p>
+<h4 id="思路-2">思路</h4>
+<div class="spoiler collapsed">
+    <div class="spoiler-title">
+        code
+    </div>
+    <div class="spoiler-content">
+        <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+    </div>
+</div>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
         <category>题解</category>
@@ -69,35 +88,6 @@ m\)</span>），导致没做出来。</p>
         <tag>题解</tag>
         <tag>ABC</tag>
         <tag>比赛</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>next 自带 tab 的 bug 修复</title>
-    <url>/2024/05/30/next-%E8%87%AA%E5%B8%A6-tab-%E7%9A%84-bug-%E4%BF%AE%E5%A4%8D/</url>
-    <content><![CDATA[<p><a href="https://theme-next.js.org/docs/tag-plugins/tabs">我们知道，next
-自带了一个东西叫 tabs</a>。</p>
-<p>然而它有点 bug。</p>
-<p>如果你用 mathjax 渲染，比如：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% tabs 两种解决方案, -1 %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab 方法一 --&gt;</span><br><span class="line"></span><br><span class="line">开 `long double` 或者写高精度，不推荐。</span><br><span class="line"></span><br><span class="line">但一般不卡精度时直接除就可以了。</span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab 方法二 --&gt;</span><br><span class="line"></span><br><span class="line">像上文的代码那样写一个分子函数一个分母函数，比较时交叉相乘，**但一定要注意不等号反向的问题！**</span><br><span class="line"></span><br><span class="line">同时还能解决分母可能为 $0$ 的问题。</span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
-<p>渲染完毕，点开“方法二”，我们发现那个 <code>$0$</code>
-没渲染出来。（不知道咋的在这里没了，但在其他地方不加下方的更改还有，大家可以自己试试）</p>
-<p>翻了翻源码，发现似乎这里的源码不太一样：</p>
-<p>正常的：<code>&lt;span class="math inline"&gt;\(0\)&lt;/span&gt;</code></p>
-<p>这里的：<code>&lt;span class="math inline"&gt;(0)&lt;/span&gt;</code></p>
-<p>于是我想到在那个 <code>$0$</code> 左右加空格，变成这样：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% tabs 两种解决方案修复版, -1 %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab 方法一修复版 --&gt;</span><br><span class="line"></span><br><span class="line">开 `long double` 或者写高精度，不推荐。</span><br><span class="line"></span><br><span class="line">但一般不卡精度时直接除就可以了。</span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab 方法二修复版 --&gt;</span><br><span class="line"></span><br><span class="line">像上文的代码那样写一个分子函数一个分母函数，比较时交叉相乘，**但一定要注意不等号反向的问题！**</span><br><span class="line"></span><br><span class="line">同时还能解决分母可能为 $ 0 $ 的问题。</span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
-<p>然后，就好了！</p>
-<div class="tabs" id="两种解决方案修复版"><ul class="nav-tabs"><li class="tab"><a href="#两种解决方案修复版-1">方法一修复版</a></li><li class="tab"><a href="#两种解决方案修复版-2">方法二修复版</a></li></ul><div class="tab-content"><div class="tab-pane" id="两种解决方案修复版-1"><p>开 <code>long double</code> 或者写高精度，不推荐。</p>
-<p>但一般不卡精度时直接除就可以了。</p></div><div class="tab-pane" id="两种解决方案修复版-2"><p>像上文的代码那样写一个分子函数一个分母函数，比较时交叉相乘，<strong>但一定要注意不等号反向的问题！</strong></p>
-<p>同时还能解决分母可能为 $ 0 $ 的问题。</p></div></div></div>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>hexo or next 配置</category>
-        <category>bug 修复 or 新的配置</category>
-      </categories>
-      <tags>
-        <tag>bug 的修复</tag>
-        <tag>hexo or next</tag>
       </tags>
   </entry>
   <entry>
@@ -136,126 +126,6 @@ zsw
         <tag>wqs 二分</tag>
         <tag>DP</tag>
         <tag>优化</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2024/04/18/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
-first post. Check <a href="https://hexo.io/docs/">documentation</a> for
-more info. If you get any problems when using Hexo, you can find the
-answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
-you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-  </entry>
-  <entry>
-    <title>决策单调性 DP</title>
-    <url>/2024/05/30/%E5%86%B3%E7%AD%96%E5%8D%95%E8%B0%83%E6%80%A7%20DP/</url>
-    <content><![CDATA[<p>请注意，本篇博客<strong>不会讲解决策单调性 DP
-及四边形不等式的基本原理等</strong>，主要是为了解决目前网上学习笔记多且清晰（如<a href="https://www.luogu.com/article/95ahsmez">whl
-的学习笔记</a>）但例题讲解相对较晦涩的问题。</p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>学习笔记</category>
-        <category>DP</category>
-        <category>DP 优化</category>
-      </categories>
-      <tags>
-        <tag>学习笔记</tag>
-        <tag>DP</tag>
-        <tag>优化</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一个有趣的对称</title>
-    <url>/2024/05/28/%E4%B8%80%E4%B8%AA%E6%9C%89%E8%B6%A3%E7%9A%84%E5%AF%B9%E7%A7%B0/</url>
-    <content><![CDATA[<p>在做一道题：</p>
-<blockquote>
-<p>直线 <span class="math inline">\(l_1\)</span> 与 <span class="math inline">\(l_2\)</span> 关于 <span class="math inline">\(y=x\)</span> 对称，其中 <span class="math inline">\(l_1:\ y=3x-b,\ l2:\ y=ax+2\)</span>，问 <span class="math inline">\(a=?,b=?\)</span>。</p>
-</blockquote>
-<p>我不太会，于是请教了 lqs。</p>
-<h4 id="他讲的内容">他讲的内容</h4>
-<p><span class="math display">\[
-y=ax+b
-\]</span></p>
-<p>对称后应是</p>
-<p><span class="math display">\[
-x=ay+b
-\]</span></p>
-<p>一些计算后，变为：</p>
-<p><span class="math display">\[
-y=\frac{1}{a}x-\frac{b}{a}
-\]</span></p>
-<p>所以，原题中 <span class="math inline">\(a=\frac{1}{3},b=6\)</span>。</p>
-<h4 id="desmos-程序演示">desmos 程序演示</h4>
-<p><a href="https://www.desmos.com/calculator/fgaxpmba9v?lang=zh-CN">体验地址</a>。</p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>数学</category>
-        <category>函数</category>
-      </categories>
-      <tags>
-        <tag>数学</tag>
-        <tag>函数</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>查漏补缺：状压 DP</title>
-    <url>/2024/05/20/%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA-%E7%8A%B6%E5%8E%8B-DP/</url>
-    <content><![CDATA[<p>To Do:</p>
-<ul class="task-list">
-<li><label><input type="checkbox" checked>关于它的中英文名</label></li>
-<li><label><input type="checkbox" checked>例题引入</label></li>
-<li><label><input type="checkbox">分析</label></li>
-<li><label><input type="checkbox">代码</label></li>
-<li><label><input type="checkbox">能直接用的二进制工具</label></li>
-<li><label><input type="checkbox">（顺便提到，不会太多）三进制及其他进制状态压缩自己优化
-DP</label></li>
-<li><label><input type="checkbox">小结</label></li>
-<li><label><input type="checkbox">致谢</label></li>
-</ul>
-<h4 id="状压的中英文名的研究">状压的中英文名的研究</h4>
-<p>状压 DP 的英文是 DP on Subsets，但其实中英文都不够准确。</p>
-<p>我认为最好的叫法是“状态压缩子集优化 DP”（简写时还是用“状压
-DP”或“状压”），英文用 State-compressioned subsets optimization for DP
-会好一点。</p>
-<h4 id="从一道例题开始">从一道例题开始</h4>
-<p><a href="https://www.acwing.com/problem/content/93/">Link</a>。</p>
-<p>首先注意，不要妄想找到这题的<strong>多项式复杂度</strong>的解法，因为这是
-NP 问题。</p>
-<p>先想暴力怎么写，枚举全排列，我们知道一共有 <span class="math inline">\(n!\)</span>
-种全排列，其中每个全排列就对应一种路径。</p>
-<p>而计算路径长度，需要 <span class="math inline">\(O(n)\)</span>，总复杂度 <span class="math inline">\(O(n\times n!)\)</span>，在 <span class="math inline">\(n=20\)</span> 时，<span class="math inline">\(n\times
-n!=48658040163532800000\)</span>，显然无法通过。</p>
-<h5 id="用状压-dp-求解">用状压 DP 求解</h5>
-<p>如果用状态压缩子集优化 DP，总复杂度为 <span class="math inline">\(O(n^2\times 2^n)\)</span>，在 <span class="math inline">\(n=20\)</span> 时，<span class="math inline">\(n^2\times 2^n\approx 4\times
-10^8\)</span>，复杂度远优于暴力，可以通过。</p>
-<p>我们设整个图的一个子集为 <span class="math inline">\(S\)</span>，且用
-<span class="math inline">\(dp_{S,j}\)</span> 表示</p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>学习笔记</category>
-        <category>DP</category>
-        <category>DP 优化</category>
-      </categories>
-      <tags>
-        <tag>学习笔记</tag>
-        <tag>DP</tag>
-        <tag>优化</tag>
-        <tag>查漏补缺</tag>
       </tags>
   </entry>
   <entry>
@@ -555,6 +425,70 @@ ly，提供例题代码（虽然我改了一点）、经典错误和其解决方
       </tags>
   </entry>
   <entry>
+    <title>查漏补缺：状压 DP</title>
+    <url>/2024/05/20/%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA-%E7%8A%B6%E5%8E%8B-DP/</url>
+    <content><![CDATA[<p>To Do:</p>
+<ul class="task-list">
+<li><label><input type="checkbox" checked>关于它的中英文名</label></li>
+<li><label><input type="checkbox" checked>例题引入</label></li>
+<li><label><input type="checkbox">分析</label></li>
+<li><label><input type="checkbox">代码</label></li>
+<li><label><input type="checkbox">能直接用的二进制工具</label></li>
+<li><label><input type="checkbox">（顺便提到，不会太多）三进制及其他进制状态压缩自己优化
+DP</label></li>
+<li><label><input type="checkbox">小结</label></li>
+<li><label><input type="checkbox">致谢</label></li>
+</ul>
+<h4 id="状压的中英文名的研究">状压的中英文名的研究</h4>
+<p>状压 DP 的英文是 DP on Subsets，但其实中英文都不够准确。</p>
+<p>我认为最好的叫法是“状态压缩子集优化 DP”（简写时还是用“状压
+DP”或“状压”），英文用 State-compressioned subsets optimization for DP
+会好一点。</p>
+<h4 id="从一道例题开始">从一道例题开始</h4>
+<p><a href="https://www.acwing.com/problem/content/93/">Link</a>。</p>
+<p>首先注意，不要妄想找到这题的<strong>多项式复杂度</strong>的解法，因为这是
+NP 问题。</p>
+<p>先想暴力怎么写，枚举全排列，我们知道一共有 <span class="math inline">\(n!\)</span>
+种全排列，其中每个全排列就对应一种路径。</p>
+<p>而计算路径长度，需要 <span class="math inline">\(O(n)\)</span>，总复杂度 <span class="math inline">\(O(n\times n!)\)</span>，在 <span class="math inline">\(n=20\)</span> 时，<span class="math inline">\(n\times
+n!=48658040163532800000\)</span>，显然无法通过。</p>
+<h5 id="用状压-dp-求解">用状压 DP 求解</h5>
+<p>如果用状态压缩子集优化 DP，总复杂度为 <span class="math inline">\(O(n^2\times 2^n)\)</span>，在 <span class="math inline">\(n=20\)</span> 时，<span class="math inline">\(n^2\times 2^n\approx 4\times
+10^8\)</span>，复杂度远优于暴力，可以通过。</p>
+<p>我们设整个图的一个子集为 <span class="math inline">\(S\)</span>，且用
+<span class="math inline">\(dp_{S,j}\)</span> 表示</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>DP</category>
+        <category>DP 优化</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+        <tag>DP</tag>
+        <tag>优化</tag>
+        <tag>查漏补缺</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>决策单调性 DP</title>
+    <url>/2024/05/30/%E5%86%B3%E7%AD%96%E5%8D%95%E8%B0%83%E6%80%A7%20DP/</url>
+    <content><![CDATA[<p>请注意，本篇博客<strong>不会讲解决策单调性 DP
+及四边形不等式的基本原理等</strong>，主要是为了解决目前网上学习笔记多且清晰（如<a href="https://www.luogu.com/article/95ahsmez">whl
+的学习笔记</a>）但例题讲解相对较晦涩的问题。</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>DP</category>
+        <category>DP 优化</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+        <tag>DP</tag>
+        <tag>优化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>线段树学习笔记</title>
     <url>/2024/04/25/%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>请注意，本文默认大家学过单改区查的基础线段树（包括动态开点），若未学，请移步
@@ -757,6 +691,68 @@ gtc，为此文提供了例题以及基础；</p>
       </tags>
   </entry>
   <entry>
+    <title>next 自带 tab 的 bug 修复</title>
+    <url>/2024/05/30/next-%E8%87%AA%E5%B8%A6-tab-%E7%9A%84-bug-%E4%BF%AE%E5%A4%8D/</url>
+    <content><![CDATA[<p><a href="https://theme-next.js.org/docs/tag-plugins/tabs">我们知道，next
+自带了一个东西叫 tabs</a>。</p>
+<p>然而它有点 bug。</p>
+<p>如果你用 mathjax 渲染，比如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% tabs 两种解决方案, -1 %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab 方法一 --&gt;</span><br><span class="line"></span><br><span class="line">开 `long double` 或者写高精度，不推荐。</span><br><span class="line"></span><br><span class="line">但一般不卡精度时直接除就可以了。</span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab 方法二 --&gt;</span><br><span class="line"></span><br><span class="line">像上文的代码那样写一个分子函数一个分母函数，比较时交叉相乘，**但一定要注意不等号反向的问题！**</span><br><span class="line"></span><br><span class="line">同时还能解决分母可能为 $0$ 的问题。</span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
+<p>渲染完毕，点开“方法二”，我们发现那个 <code>$0$</code>
+没渲染出来。（不知道咋的在这里没了，但在其他地方不加下方的更改还有，大家可以自己试试）</p>
+<p>翻了翻源码，发现似乎这里的源码不太一样：</p>
+<p>正常的：<code>&lt;span class="math inline"&gt;\(0\)&lt;/span&gt;</code></p>
+<p>这里的：<code>&lt;span class="math inline"&gt;(0)&lt;/span&gt;</code></p>
+<p>于是我想到在那个 <code>$0$</code> 左右加空格，变成这样：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% tabs 两种解决方案修复版, -1 %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab 方法一修复版 --&gt;</span><br><span class="line"></span><br><span class="line">开 `long double` 或者写高精度，不推荐。</span><br><span class="line"></span><br><span class="line">但一般不卡精度时直接除就可以了。</span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab 方法二修复版 --&gt;</span><br><span class="line"></span><br><span class="line">像上文的代码那样写一个分子函数一个分母函数，比较时交叉相乘，**但一定要注意不等号反向的问题！**</span><br><span class="line"></span><br><span class="line">同时还能解决分母可能为 $ 0 $ 的问题。</span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
+<p>然后，就好了！</p>
+<div class="tabs" id="两种解决方案修复版"><ul class="nav-tabs"><li class="tab"><a href="#两种解决方案修复版-1">方法一修复版</a></li><li class="tab"><a href="#两种解决方案修复版-2">方法二修复版</a></li></ul><div class="tab-content"><div class="tab-pane" id="两种解决方案修复版-1"><p>开 <code>long double</code> 或者写高精度，不推荐。</p>
+<p>但一般不卡精度时直接除就可以了。</p></div><div class="tab-pane" id="两种解决方案修复版-2"><p>像上文的代码那样写一个分子函数一个分母函数，比较时交叉相乘，<strong>但一定要注意不等号反向的问题！</strong></p>
+<p>同时还能解决分母可能为 $ 0 $ 的问题。</p></div></div></div>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>hexo or next 配置</category>
+        <category>bug 修复 or 新的配置</category>
+      </categories>
+      <tags>
+        <tag>bug 的修复</tag>
+        <tag>hexo or next</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一个有趣的对称</title>
+    <url>/2024/05/28/%E4%B8%80%E4%B8%AA%E6%9C%89%E8%B6%A3%E7%9A%84%E5%AF%B9%E7%A7%B0/</url>
+    <content><![CDATA[<p>在做一道题：</p>
+<blockquote>
+<p>直线 <span class="math inline">\(l_1\)</span> 与 <span class="math inline">\(l_2\)</span> 关于 <span class="math inline">\(y=x\)</span> 对称，其中 <span class="math inline">\(l_1:\ y=3x-b,\ l2:\ y=ax+2\)</span>，问 <span class="math inline">\(a=?,b=?\)</span>。</p>
+</blockquote>
+<p>我不太会，于是请教了 lqs。</p>
+<h4 id="他讲的内容">他讲的内容</h4>
+<p><span class="math display">\[
+y=ax+b
+\]</span></p>
+<p>对称后应是</p>
+<p><span class="math display">\[
+x=ay+b
+\]</span></p>
+<p>一些计算后，变为：</p>
+<p><span class="math display">\[
+y=\frac{1}{a}x-\frac{b}{a}
+\]</span></p>
+<p>所以，原题中 <span class="math inline">\(a=\frac{1}{3},b=6\)</span>。</p>
+<h4 id="desmos-程序演示">desmos 程序演示</h4>
+<p><a href="https://www.desmos.com/calculator/fgaxpmba9v?lang=zh-CN">体验地址</a>。</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>数学</category>
+        <category>函数</category>
+      </categories>
+      <tags>
+        <tag>数学</tag>
+        <tag>函数</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>重修：数位统计 DP</title>
     <url>/2024/05/20/%E9%87%8D%E4%BF%AE-%E6%95%B0%E4%BD%8D%E7%BB%9F%E8%AE%A1DP/</url>
     <content><![CDATA[
@@ -772,5 +768,28 @@ gtc，为此文提供了例题以及基础；</p>
         <tag>优化</tag>
         <tag>重修</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2024/04/18/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
+first post. Check <a href="https://hexo.io/docs/">documentation</a> for
+more info. If you get any problems when using Hexo, you can find the
+answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
+you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
   </entry>
 </search>
