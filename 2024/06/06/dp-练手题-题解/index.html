@@ -29,12 +29,15 @@
 <meta property="og:site_name" content="cppomstar&#39;s blog">
 <meta property="og:description" content="现场做，现场写题解">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cppomstar.github.io/images/202466timian.png">
+<meta property="og:image" content="https://cppomstar.github.io/images/202466z.png">
 <meta property="article:published_time" content="2024-06-06T11:39:26.000Z">
-<meta property="article:modified_time" content="2024-06-06T11:40:46.741Z">
+<meta property="article:modified_time" content="2024-06-06T11:54:38.071Z">
 <meta property="article:author" content="cppomstar">
 <meta property="article:tag" content="题解">
 <meta property="article:tag" content="DP">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cppomstar.github.io/images/202466timian.png">
 
 
 <link rel="canonical" href="http://cppomstar.github.io/2024/06/06/dp-%E7%BB%83%E6%89%8B%E9%A2%98-%E9%A2%98%E8%A7%A3/">
@@ -135,7 +138,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -148,6 +151,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-number">1.</span> <span class="nav-text"> 思路</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%AD%A3%E7%9A%84"><span class="nav-number">1.1.</span> <span class="nav-text"> 正的</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -253,7 +257,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2024-06-06 19:39:26 / 修改时间：19:40:46" itemprop="dateCreated datePublished" datetime="2024-06-06T19:39:26+08:00">2024-06-06</time>
+      <time title="创建时间：2024-06-06 19:39:26 / 修改时间：19:54:38" itemprop="dateCreated datePublished" datetime="2024-06-06T19:39:26+08:00">2024-06-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -283,7 +287,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>0</span>
+      <span>280</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -301,7 +305,21 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+    <div class="post-body" itemprop="articleBody"><details class="note primary"><summary><p>题面</p>
+</summary>
+<p>在盖了一所正方形房子后，FJ 最近又得到了一块正三角形的土地，他也想在这块土地上建造一所房子，这次这个房子也必须是正三角形的。但是，这块土地并非十全十美，上面有很多不平坦的地方（也可以叫瑕疵）。这些瑕疵十分恶心，以至于根本不能在上面盖一砖一瓦。他希望找到一块最大的正三角形无瑕疵土地来盖房子。不过，这并不是什么难题，FJ 在 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 秒内就轻松解决了这个问题。现在，您也来试试吧。</p>
+<p><img src="https://cppomstar.github.io/images/202466timian.png" alt></p>
+<p>如图所示，黑色的小正三角形表示瑕疵。</p>
+
+</details>
+<p>我相信很多人和我一样看这题会想用二维前缀和做。</p>
+<p>我试过了，比较麻烦。</p>
+<p>下面介绍一种 DP 的方法。</p>
+<h4 id="思路"><a class="markdownIt-Anchor" href="#思路"></a> 思路</h4>
+<p>有两种三角形，正的（尖朝下），或者反的（尖朝上）。</p>
+<h5 id="正的"><a class="markdownIt-Anchor" href="#正的"></a> 正的</h5>
+<p><img src="https://cppomstar.github.io/images/202466z.png" alt></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
     </div>
 
     
@@ -365,7 +383,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">28 分钟</span>
+    <span title="站点阅读时长">29 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
