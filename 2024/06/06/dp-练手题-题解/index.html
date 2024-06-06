@@ -22,26 +22,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"cppomstar.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="曾经在黑暗中寻求一丝光明 也在光明中寻求那一丝救赎">
-<meta property="og:type" content="website">
-<meta property="og:title" content="cppomstar&#39;s blog">
-<meta property="og:url" content="http://cppomstar.github.io/categories/%E6%95%B0%E5%AD%A6/index.html">
+    <meta name="description" content="现场做，现场写题解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="dp 练手题 题解">
+<meta property="og:url" content="http://cppomstar.github.io/2024/06/06/dp-%E7%BB%83%E6%89%8B%E9%A2%98-%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="cppomstar&#39;s blog">
-<meta property="og:description" content="曾经在黑暗中寻求一丝光明 也在光明中寻求那一丝救赎">
+<meta property="og:description" content="现场做，现场写题解">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-06-06T11:39:26.000Z">
+<meta property="article:modified_time" content="2024-06-06T11:40:46.741Z">
 <meta property="article:author" content="cppomstar">
-<meta property="article:tag" content="C++, OIer">
+<meta property="article:tag" content="题解">
+<meta property="article:tag" content="DP">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://cppomstar.github.io/categories/%E6%95%B0%E5%AD%A6/">
+<link rel="canonical" href="http://cppomstar.github.io/2024/06/06/dp-%E7%BB%83%E6%89%8B%E9%A2%98-%E9%A2%98%E8%A7%A3/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"categories/数学/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://cppomstar.github.io/2024/06/06/dp-%E7%BB%83%E6%89%8B%E9%A2%98-%E9%A2%98%E8%A7%A3/","path":"2024/06/06/dp-练手题-题解/","title":"dp 练手题 题解"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>分类: 数学 | cppomstar's blog</title>
+<title>dp 练手题 题解 | cppomstar's blog</title>
   
 
 
@@ -209,51 +212,134 @@
 
     </div>
 
-    <div class="main-inner category posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">数学
-          <small>分类</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://cppomstar.github.io/2024/06/06/dp-%E7%BB%83%E6%89%8B%E9%A2%98-%E9%A2%98%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cppomstar.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="cppomstar">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="cppomstar's blog">
+      <meta itemprop="description" content="曾经在黑暗中寻求一丝光明 也在光明中寻求那一丝救赎">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="dp 练手题 题解 | cppomstar's blog">
+      <meta itemprop="description" content="现场做，现场写题解">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          dp 练手题 题解
         </h1>
-      </div>
 
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2024</span>
+
+      <time title="创建时间：2024-06-06 19:39:26 / 修改时间：19:40:46" itemprop="dateCreated datePublished" datetime="2024-06-06T19:39:26+08:00">2024-06-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/%E6%97%A5%E5%B8%B8/" itemprop="url" rel="index"><span itemprop="name">日常</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>0</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+            <div class="post-description">现场做，现场写题解</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2024-05-28T15:34:15+08:00"
-              content="2024-05-28">
-          05-28
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2024/05/28/%E4%B8%80%E4%B8%AA%E6%9C%89%E8%B6%A3%E7%9A%84%E5%AF%B9%E7%A7%B0/" itemprop="url">
-            <span itemprop="name">一个有趣的对称</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag"># 题解</a>
+              <a href="/tags/DP/" rel="tag"># DP</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/06/02/wqs-%E4%BA%8C%E5%88%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="prev" title="wqs 二分学习笔记">
+                  <i class="fa fa-angle-left"></i> wqs 二分学习笔记
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-    </div>
+
+
+
+
+
+    
+  
+  <div class="comments giscus-container">
   </div>
   
   
-  
-
 </div>
   </main>
 
