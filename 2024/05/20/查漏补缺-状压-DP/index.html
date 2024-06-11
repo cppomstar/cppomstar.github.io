@@ -150,7 +150,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%8A%B6%E5%8E%8B%E7%9A%84%E4%B8%AD%E8%8B%B1%E6%96%87%E5%90%8D%E7%9A%84%E7%A0%94%E7%A9%B6"><span class="nav-number">1.</span> <span class="nav-text">状压的中英文名的研究</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%8E%E4%B8%80%E9%81%93%E4%BE%8B%E9%A2%98%E5%BC%80%E5%A7%8B"><span class="nav-number">2.</span> <span class="nav-text">从一道例题开始</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%94%A8%E7%8A%B6%E5%8E%8B-dp-%E6%B1%82%E8%A7%A3"><span class="nav-number">2.1.</span> <span class="nav-text">用状压 DP 求解</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%8A%B6%E5%8E%8B%E7%9A%84%E4%B8%AD%E8%8B%B1%E6%96%87%E5%90%8D%E7%9A%84%E7%A0%94%E7%A9%B6"><span class="nav-number">1.</span> <span class="nav-text"> 状压的中英文名的研究</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%8E%E4%B8%80%E9%81%93%E4%BE%8B%E9%A2%98%E5%BC%80%E5%A7%8B"><span class="nav-number">2.</span> <span class="nav-text"> 从一道例题开始</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%94%A8%E7%8A%B6%E5%8E%8B-dp-%E6%B1%82%E8%A7%A3"><span class="nav-number">2.1.</span> <span class="nav-text"> 用状压 DP 求解</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -296,7 +296,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>523</span>
+      <span>644</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -315,35 +315,27 @@
     
     
     <div class="post-body" itemprop="articleBody"><p>To Do:</p>
-<ul class="task-list">
-<li><label><input type="checkbox" checked>关于它的中英文名</label></li>
-<li><label><input type="checkbox" checked>例题引入</label></li>
-<li><label><input type="checkbox">分析</label></li>
-<li><label><input type="checkbox">代码</label></li>
-<li><label><input type="checkbox">能直接用的二进制工具</label></li>
-<li><label><input type="checkbox">（顺便提到，不会太多）三进制及其他进制状态压缩自己优化
-DP</label></li>
-<li><label><input type="checkbox">小结</label></li>
-<li><label><input type="checkbox">致谢</label></li>
+<ul>
+<li>[x] 关于它的中英文名</li>
+<li>[x] 例题引入</li>
+<li>[ ] 分析</li>
+<li>[ ] 代码</li>
+<li>[ ] 能直接用的二进制工具</li>
+<li>[ ] （顺便提到，不会太多）三进制及其他进制状态压缩自己优化 DP</li>
+<li>[ ] 小结</li>
+<li>[ ] 致谢</li>
 </ul>
-<h4 id="状压的中英文名的研究">状压的中英文名的研究</h4>
+<h4 id="状压的中英文名的研究"><a class="markdownIt-Anchor" href="#状压的中英文名的研究"></a> 状压的中英文名的研究</h4>
 <p>状压 DP 的英文是 DP on Subsets，但其实中英文都不够准确。</p>
-<p>我认为最好的叫法是“状态压缩子集优化 DP”（简写时还是用“状压
-DP”或“状压”），英文用 State-compressioned subsets optimization for DP
-会好一点。</p>
-<h4 id="从一道例题开始">从一道例题开始</h4>
+<p>我认为最好的叫法是“状态压缩子集优化 DP”（简写时还是用“状压 DP”或“状压”），英文用 State-compressioned subsets optimization for DP 会好一点。</p>
+<h4 id="从一道例题开始"><a class="markdownIt-Anchor" href="#从一道例题开始"></a> 从一道例题开始</h4>
 <p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/93/">Link</a>。</p>
-<p>首先注意，不要妄想找到这题的<strong>多项式复杂度</strong>的解法，因为这是
-NP 问题。</p>
-<p>先想暴力怎么写，枚举全排列，我们知道一共有 <span class="math inline">\(n!\)</span>
-种全排列，其中每个全排列就对应一种路径。</p>
-<p>而计算路径长度，需要 <span class="math inline">\(O(n)\)</span>，总复杂度 <span class="math inline">\(O(n\times n!)\)</span>，在 <span class="math inline">\(n=20\)</span> 时，<span class="math inline">\(n\times
-n!=48658040163532800000\)</span>，显然无法通过。</p>
-<h5 id="用状压-dp-求解">用状压 DP 求解</h5>
-<p>如果用状态压缩子集优化 DP，总复杂度为 <span class="math inline">\(O(n^2\times 2^n)\)</span>，在 <span class="math inline">\(n=20\)</span> 时，<span class="math inline">\(n^2\times 2^n\approx 4\times
-10^8\)</span>，复杂度远优于暴力，可以通过。</p>
-<p>我们设整个图的一个子集为 <span class="math inline">\(S\)</span>，且用
-<span class="math inline">\(dp_{S,j}\)</span> 表示</p>
+<p>首先注意，不要妄想找到这题的<strong>多项式复杂度</strong>的解法，因为这是 NP 问题。</p>
+<p>先想暴力怎么写，枚举全排列，我们知道一共有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo stretchy="false">!</mo></mrow><annotation encoding="application/x-tex">n!</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">n</span><span class="mclose">!</span></span></span></span> 种全排列，其中每个全排列就对应一种路径。</p>
+<p>而计算路径长度，需要 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>，总复杂度 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo>×</mo><mi>n</mi><mo stretchy="false">!</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n\times n!)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">n</span><span class="mclose">!</span><span class="mclose">)</span></span></span></span>，在 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>20</mn></mrow><annotation encoding="application/x-tex">n=20</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span></span></span></span> 时，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>×</mo><mi>n</mi><mo stretchy="false">!</mo><mo>=</mo><mn>48658040163532800000</mn></mrow><annotation encoding="application/x-tex">n\times n!=48658040163532800000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">n</span><span class="mclose">!</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mord">8</span><span class="mord">6</span><span class="mord">5</span><span class="mord">8</span><span class="mord">0</span><span class="mord">4</span><span class="mord">0</span><span class="mord">1</span><span class="mord">6</span><span class="mord">3</span><span class="mord">5</span><span class="mord">3</span><span class="mord">2</span><span class="mord">8</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span>，显然无法通过。</p>
+<h5 id="用状压-dp-求解"><a class="markdownIt-Anchor" href="#用状压-dp-求解"></a> 用状压 DP 求解</h5>
+<p>如果用状态压缩子集优化 DP，总复杂度为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>×</mo><msup><mn>2</mn><mi>n</mi></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^2\times 2^n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>，在 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>20</mn></mrow><annotation encoding="application/x-tex">n=20</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span></span></span></span> 时，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>n</mi><mn>2</mn></msup><mo>×</mo><msup><mn>2</mn><mi>n</mi></msup><mo>≈</mo><mn>4</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>8</mn></msup></mrow><annotation encoding="application/x-tex">n^2\times 2^n\approx 4\times 10^8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.664392em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span></span></span></span></span></span></span></span>，复杂度远优于暴力，可以通过。</p>
+<p>我们设整个图的一个子集为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span>，且用 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><msub><mi>p</mi><mrow><mi>S</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">dp_{S,j}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord mathnormal">d</span><span class="mord"><span class="mord mathnormal">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.328331em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05764em;">S</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span> 表示</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
     </div>
 
@@ -407,13 +399,13 @@ n!=48658040163532800000\)</span>，显然无法通过。</p>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">32k</span>
+    <span title="站点总字数">34k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">29 分钟</span>
+    <span title="站点阅读时长">31 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
