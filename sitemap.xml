@@ -215,6 +215,20 @@
   </url>
   
   <url>
+    <loc>http://cppomstar.github.io/tags/%E6%95%B0%E5%AD%A6/</loc>
+    <lastmod>2024-06-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://cppomstar.github.io/tags/%E5%87%BD%E6%95%B0/</loc>
+    <lastmod>2024-06-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://cppomstar.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2024-06-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -236,20 +250,6 @@
   </url>
   
   <url>
-    <loc>http://cppomstar.github.io/tags/%E6%95%B0%E5%AD%A6/</loc>
-    <lastmod>2024-06-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://cppomstar.github.io/tags/%E5%87%BD%E6%95%B0/</loc>
-    <lastmod>2024-06-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://cppomstar.github.io/tags/%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA/</loc>
     <lastmod>2024-06-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -257,14 +257,14 @@
   </url>
   
   <url>
-    <loc>http://cppomstar.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/</loc>
+    <loc>http://cppomstar.github.io/tags/%E9%87%8D%E4%BF%AE/</loc>
     <lastmod>2024-06-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://cppomstar.github.io/tags/%E9%87%8D%E4%BF%AE/</loc>
+    <loc>http://cppomstar.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/</loc>
     <lastmod>2024-06-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -294,14 +294,14 @@
   </url>
   
   <url>
-    <loc>http://cppomstar.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <loc>http://cppomstar.github.io/categories/%E6%95%B0%E5%AD%A6/</loc>
     <lastmod>2024-06-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://cppomstar.github.io/categories/%E6%95%B0%E5%AD%A6/</loc>
+    <loc>http://cppomstar.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2024-06-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -329,14 +329,14 @@
   </url>
   
   <url>
-    <loc>http://cppomstar.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/DP/</loc>
+    <loc>http://cppomstar.github.io/categories/%E6%95%B0%E5%AD%A6/%E5%87%BD%E6%95%B0/</loc>
     <lastmod>2024-06-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://cppomstar.github.io/categories/%E6%95%B0%E5%AD%A6/%E5%87%BD%E6%95%B0/</loc>
+    <loc>http://cppomstar.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/DP/</loc>
     <lastmod>2024-06-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
