@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>一种区间 DP</title>
+    <url>/2024/06/20/%E4%B8%80%E7%A7%8D%E5%8C%BA%E9%97%B4-DP/</url>
+    <content><![CDATA[<details class="note info"><summary><p>这里是题</p>
+</summary>
+<p><img src="https://cppomstar.github.io/images/qujiandpliti.png"></p>
+
+</details>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>DP</category>
+        <category>区间 DP</category>
+      </categories>
+      <tags>
+        <tag>DP</tag>
+        <tag>区间 DP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>dp 练手题 题解</title>
     <url>/2024/06/06/dp-%E7%BB%83%E6%89%8B%E9%A2%98-%E9%A2%98%E8%A7%A3/</url>
     <content><![CDATA[<details class="note primary"><summary><p>题面</p>
@@ -83,8 +102,8 @@
         <category>日常</category>
       </categories>
       <tags>
-        <tag>DP</tag>
         <tag>题解</tag>
+        <tag>DP</tag>
       </tags>
   </entry>
   <entry>
