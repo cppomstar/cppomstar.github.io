@@ -809,6 +809,23 @@ c-4-3.333-8.333-7.667-13 -13l-13-13l77-155 77-156c66 199.333 139 419.667
       </tags>
   </entry>
   <entry>
+    <title>点分治学习笔记</title>
+    <url>/2024/06/24/%E7%82%B9%E5%88%86%E6%B2%BB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p><a href="https://www.luogu.com.cn/problem/P3806">例题</a>。</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>图论</category>
+        <category>点分治</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+        <tag>图论</tag>
+        <tag>查漏补缺</tag>
+        <tag>点分治</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>tarjan(有向图的强连通分量 and 无向图的双连通分量) 学习笔记</title>
     <url>/2024/06/13/tarjan-%E6%9C%89%E5%90%91%E5%9B%BE%E7%9A%84%E5%BC%BA%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F-and-%E6%97%A0%E5%90%91%E5%9B%BE%E7%9A%84%E5%8F%8C%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
