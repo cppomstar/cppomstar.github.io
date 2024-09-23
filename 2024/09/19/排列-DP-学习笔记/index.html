@@ -22,19 +22,21 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"cppomstar.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="sm 中学我爱你">
+    <meta name="description" content="sm 中学我爱你&#x2F;I love sm middle school!">
 <meta property="og:type" content="article">
-<meta property="og:title" content="排列 DP 学习笔记">
+<meta property="og:title" content="排列 DP 学习笔记&#x2F;Things About Array DP">
 <meta property="og:url" content="http://cppomstar.github.io/2024/09/19/%E6%8E%92%E5%88%97-DP-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="cppomstar&#39;s blog">
-<meta property="og:description" content="sm 中学我爱你">
+<meta property="og:description" content="sm 中学我爱你&#x2F;I love sm middle school!">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-09-19T05:55:18.000Z">
-<meta property="article:modified_time" content="2024-09-19T05:57:58.871Z">
+<meta property="article:modified_time" content="2024-09-23T05:15:32.138Z">
 <meta property="article:author" content="cppomstar">
 <meta property="article:tag" content="DP">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="优化">
+<meta property="article:tag" content="Notes while learning">
+<meta property="article:tag" content="Optimization">
 <meta name="twitter:card" content="summary">
 
 
@@ -42,10 +44,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://cppomstar.github.io/2024/09/19/%E6%8E%92%E5%88%97-DP-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/","path":"2024/09/19/排列-DP-学习笔记/","title":"排列 DP 学习笔记"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://cppomstar.github.io/2024/09/19/%E6%8E%92%E5%88%97-DP-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/","path":"2024/09/19/排列-DP-学习笔记/","title":"排列 DP 学习笔记/Things About Array DP"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>排列 DP 学习笔记 | cppomstar's blog</title>
+<title>排列 DP 学习笔记/Things About Array DP | cppomstar's blog</title>
   
 
 
@@ -168,12 +170,12 @@
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -202,7 +204,7 @@
 <div class="widget-wrap">
 <div id="myCanvasContainer" class="widget tagcloud">
 <canvas width="250" height="250" id="resCanvas" style="width=100%">
-<ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ABC/" rel="tag">ABC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DP/" rel="tag">DP</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug-%E7%9A%84%E4%BF%AE%E5%A4%8D/" rel="tag">bug 的修复</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-or-next/" rel="tag">hexo or next</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%98%E5%8C%96/" rel="tag">优化</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%BD%E6%95%B0/" rel="tag">函数</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8C%BA%E9%97%B4-DP/" rel="tag">区间 DP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96/" rel="tag">可持久化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AF%94%E8%B5%9B/" rel="tag">比赛</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/" rel="tag">线段树</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag">题解</a><span class="tag-list-count">3</span></li></ul>
+<ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ABC/" rel="tag">ABC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DP/" rel="tag">DP</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Notes-while-learning/" rel="tag">Notes while learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Optimization/" rel="tag">Optimization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug-%E7%9A%84%E4%BF%AE%E5%A4%8D/" rel="tag">bug 的修复</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-or-next/" rel="tag">hexo or next</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%98%E5%8C%96/" rel="tag">优化</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%BD%E6%95%B0/" rel="tag">函数</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8C%BA%E9%97%B4-DP/" rel="tag">区间 DP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96/" rel="tag">可持久化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AF%94%E8%B5%9B/" rel="tag">比赛</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/" rel="tag">线段树</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag">题解</a><span class="tag-list-count">3</span></li></ul>
 </canvas>
 </div>
 </div>
@@ -236,12 +238,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="排列 DP 学习笔记 | cppomstar's blog">
-      <meta itemprop="description" content="sm 中学我爱你">
+      <meta itemprop="name" content="排列 DP 学习笔记/Things About Array DP | cppomstar's blog">
+      <meta itemprop="description" content="sm 中学我爱你/I love sm middle school!">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          排列 DP 学习笔记
+          排列 DP 学习笔记/Things About Array DP
         </h1>
 
         <div class="post-meta-container">
@@ -251,9 +253,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2024-09-19 13:55:18 / 修改时间：13:57:58" itemprop="dateCreated datePublished" datetime="2024-09-19T13:55:18+08:00">2024-09-19</time>
+      <time title="创建时间：2024-09-19 13:55:18" itemprop="dateCreated datePublished" datetime="2024-09-19T13:55:18+08:00">2024-09-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-09-23 13:15:32" itemprop="dateModified" datetime="2024-09-23T13:15:32+08:00">2024-09-23</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -271,6 +279,18 @@
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/DP/DP-%E4%BC%98%E5%8C%96/" itemprop="url" rel="index"><span itemprop="name">DP 优化</span></a>
         </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes-while-learning/" itemprop="url" rel="index"><span itemprop="name">Notes while learning</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes-while-learning/DP/" itemprop="url" rel="index"><span itemprop="name">DP</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes-while-learning/DP/DP-optimization/" itemprop="url" rel="index"><span itemprop="name">DP optimization</span></a>
+        </span>
     </span>
 
   
@@ -287,7 +307,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>4</span>
+      <span>40</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -298,14 +318,15 @@
     </span>
 </div>
 
-            <div class="post-description">sm 中学我爱你</div>
+            <div class="post-description">sm 中学我爱你/I love sm middle school!</div>
         </div>
       </header>
 
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>咕咕咕。</p>
+    <div class="post-body" itemprop="articleBody"><p>第一次写英文的！</p>
+<p>First time to write English articles!</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
     </div>
 
@@ -318,6 +339,8 @@
               <a href="/tags/DP/" rel="tag"># DP</a>
               <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"># 学习笔记</a>
               <a href="/tags/%E4%BC%98%E5%8C%96/" rel="tag"># 优化</a>
+              <a href="/tags/Notes-while-learning/" rel="tag"># Notes while learning</a>
+              <a href="/tags/Optimization/" rel="tag"># Optimization</a>
           </div>
 
         
